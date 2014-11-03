@@ -1,5 +1,0 @@
-#traces(ng-controller="brandTraceCtrl")
-  ul(masonry)
-    li.masonry-brick.col-xs-4(ng-repeat="trace in traces")
-      a.fancybox(id="{{trace.id}}" href="{{trace.image}}" rel="gallery" data-fancybox-group="gallery" title="{{trace.description}}" fancybox="{openEffect : 'elastic', closeEffect : 'elastic',helpers : {title : {type : 'outside'}}}")
-        img.img-responsive( ng-src="{{trace.thumb}}")

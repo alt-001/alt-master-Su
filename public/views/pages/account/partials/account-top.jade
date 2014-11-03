@@ -1,0 +1,30 @@
+#account-top
+  .navs
+    .col-xs-6
+      a(href='#')
+        img(src='/images/logo.png')
+      ul
+        li my.
+        li
+          a(href="/account/love-products") love 
+        li
+          a.active(href="#") cart
+        li
+          a(href="/account/order") order
+        li
+          a(href="/account/profile") profile
+    .col-xs-6.text-right
+      div
+        button.chat_btn Chat Online
+      div.chat-text
+        | lovely to meet,
+        b
+          | z wang
+  .clearfix   
+  .lists(ng-show="'{{account}}' == 'love-products','love-brand'")
+    ul
+      li
+        a(href="/account/love-products") lovely products
+      li
+        a(href="/account/love-brand") followed brand
+
