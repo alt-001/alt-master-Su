@@ -1,0 +1,14 @@
+[
+  {
+    "id":"1",
+    "thumb":"/assets/images/img1.jpg",
+    "image":"/assets/images/img1.jpg",
+    "description": "loram ispom loram ispom "
+  },
+  {
+    "id":"2",
+    "thumb":"/assets/images/img2.jpg",
+    "image":"/assets/images/img2.jpg",
+    "description": "New York-based design studio byAMT creates jewelry, home goods, and furniture that tweak expectations and invite."
+  }
+]

@@ -1,0 +1,38 @@
+#filters
+  #filterHandle(filter-handle)
+    .text 
+      | filter
+  .col-lg-2.col-md-2.col-sm-2
+    form(ng-controller="filterCtrl")
+      label.filter-button.gender.click-active(ng-repeat="gender in genders" click-active)
+        .child
+          input(ng-model="productsFilterService.activeFilters.gender" type="radio" name="filter" value="{{gender.value}}" )
+          | {{gender.text}}
+  .col-lg-3.col-md-3.col-sm-3
+    form(ng-controller="filterCtrl")
+      .col-xs-12.col-sm-12.col-md-6.col-lg-6(ng-repeat="type in types")
+        label.filter-button.type.click-active(click-active)
+          .child
+            input(ng-model="productsFilterService.activeFilters.type" type="radio" name="filter" value="{{type.value}}" )
+            | {{type.text}}
+  .col-lg-2.col-md-2.col-sm-2
+    form(ng-controller="filterCtrl")
+      .col-xs-12.col-sm-12.col-md-4.col-lg-4(ng-repeat="color in colors")
+        label.color.click-active(style="background-color: {{color.text}}" click-active)
+          input(ng-model="productsFilterService.activeFilters.color" type="radio" name="filter" value="{{color.value}}" )
+          | {{color.text}}
+  .col-lg-3.col-md-3.col-sm-3
+    form
+      - var sortOptions = [{value: "-id", text: "Most recent"}, {value: "-likeCount", text: "Most liked"}, {value: "-price", text: "Price high"}, {value: "price", text: "Price low"}, {value: "video", text: "Video"}, {value: "featured", text: "We recommend"}]
+      each val in sortOptions
+        .col-xs-12.col-sm-12.col-md-6.col-lg-6
+          label.filter-button.sort.click-active(click-active)
+            .child
+              input(ng-model="sort" type="radio" name="filter" value="#{val.value}")
+              | #{val.text}
+  .col-lg-2.col-md-2.col-sm-2
+    .misc
+      .goexplore 
+        .child
+          | Go explore
+      .prefer My preference

@@ -1,0 +1,165 @@
+#signin-sidebar {
+  position: fixed;
+  font-family: 'PT Sans';
+  background-color: #3e3e3e;
+  height: 100%;
+}
+#signin-sidebar input {
+  border: 0;
+  font-size: 16px;
+  background-color: transparency;
+  margin: 10px 6px;
+  padding-left: 10px;
+}
+#signin-sidebar input:hover,
+#signin-sidebar input:focus,
+#signin-sidebar input.active {
+  border: 0;
+  outline: 0;
+}
+#signin-sidebar .login {
+  background-color: #fdfdfd;
+  padding: 50px;
+  padding-top: 55px;
+  color: #000;
+  font-size: 20px;
+  font-weight: 800;
+  height: 250px;
+}
+#signin-sidebar .login .login-title {
+  border-bottom: 2px solid #ccc;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+}
+#signin-sidebar .login .forget {
+  color: #929292;
+  font-weight: 100;
+  font-size: 12px;
+  text-decoration: underline;
+  margin-top: 5%;
+}
+#signin-sidebar .login .email-style:after,
+#signin-sidebar .login .password-style:after {
+  content: "]";
+  position: absolute;
+  font-size: 25px;
+}
+#signin-sidebar .login .email-style:before,
+#signin-sidebar .login .password-style:before {
+  content: "[";
+  position: absolute;
+  left: 34px;
+  font-size: 25px;
+}
+#signin-sidebar .login .password-style:after,
+#signin-sidebar .login .password-style:before {
+  top: 148px;
+}
+#signin-sidebar .login .submit {
+  margin-left: 0;
+  border: 1px solid #000;
+  width: 60px;
+  color: #000;
+  background-color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  text-align: center;
+}
+#signin-sidebar .login label {
+  color: #929292;
+  font-size: 12px;
+}
+#signin-sidebar .login label input {
+  margin-top: 15px;
+}
+#signin-sidebar .signup {
+  background-color: #3e3e3e;
+  color: #fff;
+  padding: 35px;
+  padding-top: 15px;
+}
+#signin-sidebar .signup .title {
+  font-size: 18px;
+}
+#signin-sidebar .signup .vip {
+  font-weight: 700;
+}
+#signin-sidebar .signup .member {
+  border-top: 2px solid #626262;
+  border-bottom: 2px solid #626262;
+  padding-top: 15px;
+  padding-bottom: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+#signin-sidebar .signup .member .social-login {
+  margin: 0;
+  margin-bottom: 15px;
+}
+#signin-sidebar .signup .member .social-login .social li {
+  float: left;
+  padding-left: 10px;
+}
+#signin-sidebar .signup .member .social-login .social li a img {
+  width: 22px;
+  height: 20px;
+  margin-right: 6px;
+  opacity: 0.8;
+  transition: all 0.5s ease;
+}
+#signin-sidebar .signup .member .local-signin {
+  color: #aeaeae;
+}
+#signin-sidebar .signup .member .local-signin input {
+  background-color: #3e3e3e;
+  font-weight: 700;
+  padding-left: 10px;
+  padding-right: 5px;
+}
+#signin-sidebar .signup .member .local-signin input.lname {
+  padding-left: 15px;
+}
+#signin-sidebar .signup .member .local-signin .submit {
+  border: 1px solid #fff;
+  width: 50px;
+  color: #fff;
+  font-size: 14px;
+}
+#signin-sidebar .signup .member .local-signin label {
+  font-size: 12px;
+}
+#signin-sidebar .signup .member .local-signin .first-name-style:after,
+#signin-sidebar .signup .member .local-signin .last-name-style:after,
+#signin-sidebar .signup .member .local-signin .email-style:after,
+#signin-sidebar .signup .member .local-signin .password-style:after {
+  color: #ccc;
+  content: "]";
+  position: absolute;
+  font-size: 25px;
+  font-weight: 700;
+}
+#signin-sidebar .signup .member .local-signin .first-name-style:before,
+#signin-sidebar .signup .member .local-signin .last-name-style:before,
+#signin-sidebar .signup .member .local-signin .email-style:before,
+#signin-sidebar .signup .member .local-signin .password-style:before {
+  color: #ccc;
+  content: "[";
+  position: absolute;
+  left: 0;
+  font-size: 25px;
+  font-weight: 700;
+}
+#signin-sidebar .signup .member .local-signin .last-name-style:before {
+  left: 5px;
+}
+#signin-sidebar .signup .member .local-signin label input {
+  margin-left: 0px;
+  margin-bottom: -15px;
+  font-weight: 100;
+}
+#signin-sidebar .signup .member .local-signin label input .submit {
+  width: 100px;
+}
+#signin-sidebar .signup .member .vip {
+  margin-top: 5px;
+}

@@ -1,0 +1,26 @@
+{
+  "name": "ALT",
+  "version": "0.0.0",
+  "authors": [
+    "Boringtao"
+  ],
+  "description": "A Lovely Thing",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "jquery": "*",
+    "toastr": "*",
+    "angular": "*",
+    "angular-resource": "*",
+    "angular-route": "*",
+    "angular-sanitize": "*",
+    "angular-mocks": "*",
+    "angular-bootstrap": "*",
+    "bootstrap": "*",
+    "lodash": "*",
+    "restangular": "*",
+    "angular-utils-pagination": "~0.2.5",
+    "ngprogress": "~1.0.7",
+    "angular-masonry": "~0.9.1"
+  }
+}

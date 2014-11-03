@@ -1,0 +1,24 @@
+#search(ng-controller="searchCtrl")
+  .close.text-right
+    a(href="/search?taret=all")
+      img.img-responsive(src='assets/images/follow_cross.png')
+  .title
+    | Please type here for a lovely thing...
+  label
+    input(type='text' ng-model='criteria' autofocus)
+  .results
+    - var searchSections = [{value: "name", text: "name"}, {value: "id", text: "created"}, {value: "price", text: "price"}]
+      each val in searchSections
+        header(ng-show="criteria.length >= 1")
+          .col-xs-6.col-sm-6.col-md-6.col-lg-6
+            h2 By #{val.text}
+          .col-xs-6.col-sm-6.col-md-6.col-lg-6.text-right
+            h4(ng-hide="searchFiltered.length == 0")
+              a(ng-href="/search/#{val.value}?target={{criteria}}") More {{criteria}} by #{val.text}
+          .clearfix
+        ul 
+          li.col-xs-6.col-sm-4.col-md-3.col-lg-2(ng-repeat="search in searchFiltered = (searches | filter: criteria) | limitTo: 6 | orderBy: '#{val.value}'" ng-show="criteria.length >= 1") 
+            .search-result
+          .clearfix
+        div(ng-show="searchFiltered.length == 0 && criteria.length >= 1")
+          | No result found

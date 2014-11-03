@@ -1,0 +1,220 @@
+[
+  {
+    "id":"20",
+    "name":"Black Cotton Scarf",
+    "image":"/assets/images/img20.jpg",
+    "designer":"Martyn Bal",
+    "price":110.00,
+    "color":"red",
+    "type":"appeal",
+    "gender":"y",
+    "likeCount":3
+  },
+  {
+    "id":"19",
+    "name":"Black Cotton Scarf",
+    "image":"/assets/images/img19.jpg",
+    "designer":"Martyn Bal",
+    "price":110.00,
+    "color":"red",
+    "type":"appeal",
+    "gender":"x",
+    "likeCount":3
+  },
+  {
+    "id":"18",
+    "name":"Red Cotton Scarf",
+    "image":"/assets/images/img18.jpg",
+    "designer":"Martyn Bal",
+    "price":12.00,
+    "color":"red",
+    "type":"bag",
+    "gender":"y",
+    "likeCount":1
+  },
+  {
+    "id":"17",
+    "name":"Black Cotton Scarf",
+    "image":"/assets/images/img17.jpg",
+    "designer":"Martyn Bal",
+    "price":110.00,
+    "color":"red",
+    "type":"shoe",
+    "gender":"x",
+    "likeCount":3
+  },
+  {
+    "id":"16",
+    "name":"Black Cotton Scarf",
+    "image":"/assets/images/img16.jpg",
+    "designer":"Martyn Bal",
+    "price":110.00,
+    "color":"red",
+    "type":"jewelly",
+    "gender":"y",
+    "likeCount":3
+  },
+  {
+    "id":"15",
+    "name":"Red Cotton Scarf",
+    "image":"/assets/images/img15.jpg",
+    "designer":"Martyn Bal",
+    "price":12.00,
+    "color":"red",
+    "type":"appeal",
+    "gender":"x",
+    "likeCount":1
+  },
+  {
+    "id":"14",
+    "name":"Blue Cotton Scarf",
+    "image":"/assets/images/img14.jpg",
+    "designer":"Martyn Bal",
+    "price":20.00,
+    "color":"red",
+    "type":"accessory",
+    "gender":"x",
+    "likeCount":0
+  },
+  {
+    "id":"13","name":"Grey Cotton Scarf",
+    "image":"/assets/images/img13.jpg",
+    "designer":"Martyn Bal",
+    "price":10.00,
+    "color":"red",
+    "type":"accessory",
+    "gender":"x",
+    "likeCount":5
+  },
+  {
+    "id":"12",
+    "name":"White Cotton Scarf",
+    "image":"/assets/images/img12.jpg",
+    "designer":"Martyn Bal",
+    "price":120.00,
+    "color":"blue",
+    "type":"appeal",
+    "gender":"y",
+    "likeCount":0
+  },
+  {
+    "id":"11",
+    "name":"White Cotton Scarf",
+    "image":"/assets/images/img11.jpg",
+    "designer":"Martyn Bal",
+    "price":120.00,
+    "color":"blue",
+    "type":"bag",
+    "gender":"y",
+    "likeCount":0
+  },
+  {
+    "id":"10",
+    "name":"White Cotton Scarf",
+    "image":"/assets/images/img10.jpg",
+    "designer":"Martyn Bal",
+    "price":120.00,
+    "color":"blue",
+    "type":"shoe",
+    "gender":"y",
+    "likeCount":0
+  },
+  {
+    "id":"9",
+    "name":"White Cotton Scarf",
+    "image":"/assets/images/img9.jpg",
+    "designer":"Martyn Bal",
+    "price":120.00,
+    "color":"blue",
+    "type":"appeal",
+    "gender":"x",
+    "likeCount":0
+  },
+  {
+    "id":"8",
+    "name":"White Cotton Scarf",
+    "image":"/assets/images/img8.jpg",
+    "designer":"Martyn Bal",
+    "price":110.00,
+    "color":"red",
+    "type":"bag",
+    "gender":"y",
+    "likeCount":3
+  },
+  {
+    "id":"7",
+    "name":"White Cotton Scarf",
+    "image":"/assets/images/img7.jpg",
+    "designer":"Martyn Bal",
+    "price":12.00,
+    "color":"red",
+    "type":"appeal",
+    "gender":"y",
+    "likeCount":1
+  },
+  {
+    "id":"6",
+    "name":"White Cotton Scarf",
+    "image":"/assets/images/img6.jpg",
+    "designer":"Martyn Bal",
+    "price":20.00,
+    "color":"red",
+    "type":"accessory",
+    "gender":"y",
+    "likeCount":0
+  },
+  {
+    "id":"5","name":"White Cotton Scarf",
+    "image":"/assets/images/img5.jpg",
+    "designer":"Martyn Bal",
+    "price":10.00,
+    "color":"red",
+    "type":"appeal",
+    "gender":"y",
+    "likeCount":5
+  },
+  {
+    "id":"4",
+    "name":"White Cotton Scarf",
+    "image":"/assets/images/img4.jpg",
+    "designer":"Martyn Bal",
+    "price":120.00,
+    "color":"blue",
+    "type":"bag",
+    "gender":"y",
+    "likeCount":0
+  },
+  {
+    "id":"3",
+    "name":"White Cotton Scarf",
+    "image":"/assets/images/img3.jpg",
+    "designer":"Martyn Bal",
+    "price":120.00,
+    "color":"blue",
+    "type":"bag",
+    "gender":"y",
+    "likeCount":0
+  },
+  {
+    "id":"2",
+    "name":"White Cotton Scarf",
+    "image":"/assets/images/img2.jpg",
+    "designer":"Martyn Bal",
+    "price":120.00,
+    "color":"blue",
+    "type":"accessory",
+    "gender":"y",
+    "likeCount":0
+  },
+  {
+    "id":"1",
+    "name":"White Cotton Scarf",
+    "image":"/assets/images/img1.jpg",
+    "designer":"Martyn Bal",
+    "price":120.00,
+    "color":"blue",
+    "type":"appeal",
+    "gender":"x",
+    "likeCount":0
+  }
+]

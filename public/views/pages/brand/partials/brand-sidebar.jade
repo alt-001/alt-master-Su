@@ -1,0 +1,32 @@
+#brand-sidebar
+  .title 
+    | byAMT
+  .misc
+    .col-xs-4
+      .share-wrapper
+        a.share(href='#') Share...
+        .share-expand
+          a(href='#')
+            img(src='/assets/images/fb.png')
+          a(href='#')
+            img(src='/assets/images/twitter_2.png')
+          a(href='#')
+            img(src='/assets/images/email-icon.png')   
+    .col-xs-8.text-right
+      a.follow(href='/signin') Follow
+      a.message(href='/signin') Message
+    .clearfix
+  .brand-info
+    | New York-based design studio byAMT creates jewelry, home goods, and furniture that tweak expectations and invite.
+  .brand-menu(ng-controller="brandChapterCtrl")
+    .col-xs-12.text-right
+      ul
+        li(ng-repeat="chapter in chapters" ng-class="navClass('{{chapter.name}}')")
+          a(href='{{chapter.url}}' style="text-transform: capitalize") {{chapter.name}}
+          ul#productExpand(ng-show="isProduct()")
+            li(ng-repeat="sub in chapter.sub" ng-class="navClass('{{sub.name}}')")
+              a(href='{{sub.url}}' style="text-transform: capitalize") {{sub.name}}
+
+
+
+    
