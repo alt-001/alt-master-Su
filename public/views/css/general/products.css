@@ -47,6 +47,13 @@
   color: #000;
   font-weight: 100;
 }
+#products li .tag .tag-info .remove {
+  background-color: #cdcdcd;
+  width: 20px;
+  height: 20px;
+  border: none;
+  font-size: 10px;
+}
 #products li .tag .tag-info .small-button {
   background-color: #b3b3b3;
   border-radius: 3px;

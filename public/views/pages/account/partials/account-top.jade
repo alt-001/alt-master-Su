@@ -8,7 +8,7 @@
         li
           a(href="/account/love-products") love 
         li
-          a.active(href="#") cart
+          a.active(href="/account/cart") cart
         li
           a(href="/account/order") order
         li
@@ -21,7 +21,7 @@
         b
           | z wang
   .clearfix   
-  .lists(ng-show="'{{account}}' == 'love-products','love-brand'")
+  .lists(ng-controller="accountCtrl" ng-show="isLove()")
     ul
       li
         a(href="/account/love-products") lovely products

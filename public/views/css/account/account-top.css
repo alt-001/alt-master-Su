@@ -31,15 +31,9 @@
 #account-top .navs ul li a:hover {
   color: #000;
   text-decoration: none;
-  background-image: url("/assets/images/square-brackets-left.svg"), url("/assets/images/square-brackets-right.svg");
-  background-position: left center, right center;
-  background-repeat: no-repeat;
 }
 #account-top .navs ul li a.active {
   color: #000;
-  background-image: url("/assets/images/square-brackets-left.svg"), url("/assets/images/square-brackets-right.svg");
-  background-position: left center, right center;
-  background-repeat: no-repeat;
 }
 #account-top .navs .chat-text {
   color: #929292;

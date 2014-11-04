@@ -37,4 +37,8 @@ alt
 })
 .controller('brandTraceCtrl', function($scope, brandTrace) {
   $scope.traces = brandTrace.query();
+})
+.controller('accountCtrl', function($scope, cartService) {
+  $scope.carts = cartService.query();
+  console.log($scope.carts);
 });

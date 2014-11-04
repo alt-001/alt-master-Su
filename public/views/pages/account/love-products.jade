@@ -1,7 +1,7 @@
 include partials/account-top
 #products(ng-controller="productsCtrl")
   ul(masonry)
-    li.masonry-brick.col-xs-2(ng-repeat="product in products | orderBy: sort |  filter:productsFilterService.activeFilters" hover-show)
+    li.masonry-brick.col-xs-3(ng-repeat="product in products | orderBy: sort |  filter:productsFilterService.activeFilters" hover-show)
       a(href='/product')
         img.product-cover.img-responsive(ng-src="{{product.image}}")
       .tag
@@ -12,8 +12,12 @@ include partials/account-top
         .col-xs-10
           .tag-info
             .col-xs-12
-              a(href='/product')
-               | {{product.name}}
+              .col-xs-10
+                a(href='/product')
+                 | {{product.name}}
+              .col-xs-2.text-right
+                a(href='#')
+                  button.remove X
             .col-xs-12 
               | {{product.price | currency: "£"}}
             .col-xs-12 

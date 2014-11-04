@@ -14,6 +14,7 @@ alt
 	.when('/account/love-brand', { templateUrl: '/pages/account/love-brand' })
 	.when('/account/order', { templateUrl: '/pages/account/order' })
 	.when('/account/profile', { templateUrl: '/pages/account/profile' })
+	.when('/account/cart', { templateUrl: '/pages/account/cart' })
 	/* ==========================================================================
 	Brand page
 	========================================================================== */

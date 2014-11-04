@@ -31,6 +31,10 @@ alt
 .factory('productsSortService', function($resource) {
 	var productsSortResource = $resource('/data/sort.json');
 	return productsSortResource;
+})
+.factory('cartService', function($resource) {
+	var cartResource = $resource('/data/cart.json');
+	return cartResource;
 });
 
 

@@ -8,3 +8,9 @@
   font-family: 'PT Sans';
   padding: 10px;
 }
+#account-love-brand #brand-info:hover .remove {
+  opacity: 1;
+}
+#account-love-brand #brand-info .remove {
+  opacity: 0;
+}
