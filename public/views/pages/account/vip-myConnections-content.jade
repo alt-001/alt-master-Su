@@ -1,0 +1,43 @@
+include partials/vip-top
+.col-xs-3
+  include partials/vip-sidebar
+.col-xs-9
+  #vipMyConnectionsContent
+    .top-bar
+      .col-xs-8.top-bar-header
+        | My Connections
+      .col-xs-4
+        form(ng-model="vipSearch")
+          .col-xs-8.pull-right
+            input.search(type='text' placeholder='Search').col-xs-10
+            button(type="submit").addon.col-xs-2
+              span.glyphicon.glyphicon-search
+    .connections
+      .col-xs-4
+        .media
+          a.pull-left(href='#')
+            img.media-object(ng-src='/assets/images/pro/photographer.jpg')
+          .media-body
+            h4.media-heading Media heading
+            | Kristine
+      .col-xs-4
+        .media
+          a.pull-left(href='#')
+            img.media-object(ng-src='/assets/images/pro/pr expert.jpg')
+          .media-body
+            h4.media-heading Media heading
+            | Kristine
+
+      .col-xs-4
+        .media
+          a.pull-left(href='#')
+            img.media-object(ng-src='/assets/images/pro/store.jpg')
+          .media-body
+            h4.media-heading Media heading
+            | Kristine
+    .clearfix
+    ul.pager
+      li.previous.disabled
+        a(href='#') Previous
+      li.next
+        a(href='#') Next

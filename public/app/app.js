@@ -6,7 +6,19 @@ alt
 	$routeProvider
 
 	.when('/', { templateUrl: '/pages/index' })
-
+	/* ==========================================================================
+	Pro Account page
+	========================================================================== */
+    .when('/account/recentnews', { templateUrl: '/pages/account/vip-recentNews-content' })
+	.when('/account/otherprofile', { templateUrl: '/pages/account/vip-otherMemberProfile-content' })
+	.when('/account/otherprofile-connected', { templateUrl: '/pages/account/vip-otherMemberProfile-connected' })
+	.when('/account/new-member', { templateUrl: '/pages/account/vip-newmember' })
+	.when('/account/myconnections', { templateUrl: '/pages/account/vip-myConnections-content' })
+	.when('/account/otherconnections', { templateUrl: '/pages/account/vip-otherconnections' })
+	.when('/account/inbox', { templateUrl: '/pages/account/vip-accountInbox-content' })
+	.when('/account/compose', { templateUrl: '/pages/account/vip-accountCompose-content' })
+	.when('/account/maildetail', { templateUrl: '/pages/account/vip-accountMailDetails-content' })
+	.when('/account/invite', { templateUrl: '/pages/account/vip-accountInvitation-content' })
 	/* ==========================================================================
 	Account page
 	========================================================================== */

@@ -16,10 +16,26 @@ html
  */
 
 body
-  margin: 0
-
+  margin 0
+  font-family 'PT Sans' 'Source Sans Pro'
 /* HTML5 display definitions
    ========================================================================== */
+
+.modal-dialog
+  margin 10% auto
+  z-index 9999
+  .btn-primary
+    background black
+  .modal-footer
+    border none
+  .modal-header
+    border none
+
+.dropdown-toggle:hover + .dropdown-menu 
+  display block
+
+.dropdown-menu:hover
+  display block
 
 #lean_overlay 
   position  fixed
@@ -30,9 +46,6 @@ body
   width 100%
   background  #000
   display  none
-
-
-
 /**
  * Correct `block` display not defined in IE 8/9.
  */

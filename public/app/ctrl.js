@@ -27,9 +27,7 @@ alt
     $scope.genders = productsFilterGender.query();
     $scope.types = productsFilterType.query();
     $scope.colors = productsFilterColor.query();
-
     /*
-
     $scope.selected = $scope.genders[0].value;
     console.log($scope.selected);
 
@@ -47,7 +45,6 @@ alt
 })
 .controller('brandChapterCtrl', function($scope, $routeParams, $location) { 
     $scope.onchapter = $routeParams.chapter;
-
     $scope.chapters = [
         { name: 'products', url: '/brand/products' },
         { name: 'moment', url: '/brand/moment' },
@@ -56,7 +53,6 @@ alt
         { name: 'inspirations', url: '/brand/inspirations' },
         { name: 'trace', url: '/brand/trace' }
     ]
-
     $scope.navClass = function (chapter) {
         var currentRoute = $location.path().split('/');
         return chapter === currentRoute[2] ? 'active' : '';

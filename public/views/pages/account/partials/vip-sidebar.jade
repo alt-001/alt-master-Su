@@ -1,0 +1,75 @@
+#vipSidebar
+  .profile
+    .info
+      .col-xs-4.headshot
+        img.img-responsive(ng-src="/assets/images/pro/make-up.jpg")
+        button.user-profile Edit
+      .col-xs-8.details
+        h3.name Zhe Wang
+        p.intro Founder at alovelything.com
+        p.role Buyer
+        p.connections 
+          span.count 27 
+          a(href="/account/myconnections").connections Connections
+    .about
+      p I am a designer, fashion photographer. em Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+  .recommend
+    h3 You may also know
+    #carousel.carousel.slide(data-ride="carousel")
+      .carousel-inner
+        .item.active
+          ul.list-inline
+            li.col-xs-3
+              a(href="/account/otherprofile")
+                img.img-responsive(ng-src="/assets/images/pro/designer.jpg")
+              .infowrapper
+                h4.name Kristina
+                p.role Photographer
+            li.col-xs-3
+              a(href="/account/otherprofile")
+                img.img-responsive(ng-src="/assets/images/pro/designer1.jpg")
+              .infowrapper
+                h4.name Kristina
+                p.role Photographer
+            li.col-xs-3
+              a(href="/account/otherprofile")
+                img.img-responsive(ng-src="/assets/images/pro/desginer2.jpg")
+              .infowrapper
+                h4.name Kristina
+                p.role Photographer
+            li.col-xs-3
+              a(href="/account/otherprofile")
+                img.img-responsive(ng-src="/assets/images/pro/desginer4.jpg")
+              .infowrapper
+                h4.name Kristina
+                p.role Photographer
+        .item
+          ul.list-inline
+            li.col-xs-3
+              a
+                img.img-responsive(ng-src="/assets/images/pro/editor.jpg")
+              .infowrapper
+                h4.name Kristina
+                p.role Photographer 
+            li.col-xs-3
+              a
+                img.img-responsive(ng-src="/assets/images/pro/designer1.jpg")
+              .infowrapper
+                h4.name Kristina
+                p.role Photographer
+            li.col-xs-3
+              a
+                img.img-responsive(ng-src="/assets/images/pro/model.jpg")
+              .infowrapper
+                h4.name Kristina
+                p.role Photographer
+            li.col-xs-3
+              a
+                img.img-responsive(ng-src="/assets/images/pro/photographer.jpg")
+              .infowrapper
+                h4.name Kristina
+                p.role Photographer
+      a.left.carousel-control(href='#carousel' role='button' data-slide='prev')
+        span.glyphicon.glyphicon-chevron-left
+      a.right.carousel-control(href='#carousel' role='button' data-slide='next')
+        span.glyphicon.glyphicon-chevron-right

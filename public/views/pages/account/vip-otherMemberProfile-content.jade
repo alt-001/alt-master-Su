@@ -1,0 +1,64 @@
+include partials/vip-top
+.col-xs-3
+  include partials/vip-sidebar-other
+.col-xs-9
+  #vipOtherMemberProfileContent
+    h4.col-xs-12 Recent news
+    .updates
+      .lists
+        .col-xs-3.media-info
+          .thumbnail
+            img.media-object(ng-src='/assets/images/pro/blogger1.jpg')
+            .caption
+              h5.name
+                | Minne Hayes
+              p.role
+                | Photographer
+        .col-xs-3.media-info
+          .thumbnail
+            img.media-object(ng-src='/assets/images/pro/brand4.jpg')
+            .caption
+              h5.name
+                | Minne Hayes
+              p.role
+                | Photographer
+          span.connection 
+          p.duration
+            | 1 day ago
+        .col-xs-3.media-info
+          .thumbnail
+            img.media-object(ng-src='/assets/images/pro/profile_1173171134_75sq_1396544751.jpg')
+            .caption
+              h5.name
+                | Minne Hayes
+              p.role
+                | Photographer
+          .span
+        .col-xs-3.media-info
+          .thumbnail
+            img.media-object(ng-src='/assets/images/pro/thumnail2.jpg')
+            .caption
+              h5.name
+                | handbag
+              p.role
+                | byAMT
+          span.likes
+          p.duration
+            | 1 day ago  
+    .clearfix
+    .alert-msg
+      | Sorry you can't see recent news unless other member connects with you
+      .clearfix
+      button.btn.invite-btn(type='button' data-toggle="modal" data-target="#myModal") Invite to Connect	
+      button.btn.back-btn(type='button') Back to Recent News
+    #myModal.modal.fade(tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true")
+      .modal-dialog
+        .modal-content
+          .modal-header
+            button.close(type="button" data-dismiss="modal")
+              span(aria-hidden="true") &times;
+              span.sr-only Close
+            h4#myModalLabel.modal-title Send invitation
+          .modal-footer
+            button.btn.btn-default(type="button" data-dismiss="modal") Close
+            button.btn.btn-primary(type="button") Submit

@@ -1,0 +1,54 @@
+include partials/vip-top
+.col-xs-3
+  include partials/vip-sidebar
+.col-xs-9
+  include partials/vip-top-sub
+  #vipAccountInvitationContent
+    ul.list-inline.pull-right.menu.col-lg-12
+      li
+        a
+          |  Accept
+      li
+        a
+          | Ignore
+      li
+        .form
+          input(type="checkbox")
+    .clearfix
+    ul.messages
+      li.media
+        a.pull-left
+          img.media-object(ng-src='/assets/images/pro/brand.jpg')
+        .media-body
+          h4.col-lg-4.media-heading
+            | Kristine
+          ul.info.pull-right.list-inline
+            li.date
+              | 23 July
+            li
+              form
+                input(type = "checkbox")
+          .clearfix
+          p.title
+            | Kristine
+        .btn-group
+          button.accept Accept
+          button.ignore Ignore
+      li.media
+        a.pull-left
+          img.media-object(ng-src='/assets/images/pro/editor.jpg')
+        .media-body
+          h4.col-lg-4.media-heading
+            | Kristine
+          ul.info.pull-right.list-inline
+            li.date
+              | 23 July
+            li
+              form
+                input(type = "checkbox")
+          .clearfix
+          p.title
+            | Kristine
+        .btn-group
+          button.accept Accept
+          button.ignore Ignore
