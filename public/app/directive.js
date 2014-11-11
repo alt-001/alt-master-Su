@@ -5,6 +5,16 @@ alt
     templateUrl: '/app/partials/search-result.html'
   }
 })
+.directive('clickActive', function() {
+  return function(scope, element, attrs) {
+    if (scope.$last){
+      $('.click-active').click(function() {        
+        $(this).closest('form').find('.click-active').removeClass('active');
+        $(this).addClass('active');
+      });
+    }
+  };
+})
 .directive('hoverShow', function() {
   return function(scope, element, attrs) {
     if (scope.$last){
@@ -16,16 +26,6 @@ alt
       $('.tag').hoverIntent(function() {
         }, function() {
           $(this).find('.tag-info').css({opacity: 1, visibility: 'visible'}).animate({opacity: 0}, 200, 'easeOutBounce');
-      });
-    }
-  };
-})
-.directive('clickActive', function() {
-  return function(scope, element, attrs) {
-    if (scope.$last){
-      $('.click-active').click(function() {        
-        $(this).closest('form').find('.click-active').removeClass('active');
-        $(this).addClass('active');
       });
     }
   };
@@ -51,39 +51,24 @@ alt
       }
   };
 })
-// .directive('fancybox', function($compile) {
-//   return function($scope, element, attrs) {
-
-//       $scope.open_fancybox = function() {
-        
-//         var el = angular.element(element.html()),
-//         compiled = $compile(el);        
-//         element.fancybox({
-//                 openEffect  : 'elastic',
-//                 closeEffect : 'elastic',
-//                 helpers : {
-//                   title : {
-//                     type : 'inside'
-//                   }
-//                 }
-//             });
-//         $.fancybox.open(el);
-//         compiled($scope);     
-//       };
-//   };
-// })
-// .directive('fancybox', function($compile) {
-//   return function($scope, element, attrs) {
-
-//       $scope.open_fancybox = function() {
-        
-//         var el = angular.element(element.html()),
-//         compiled = $compile(el);        
-//         $.fancybox.open(el);
-//         compiled($scope);     
-//       };
-//   };
-// })
+.directive('follow', function() {
+  return function(scope, element, attrs) {
+    $(".follow").click( function(event){
+    event.preventDefault();
+    if ($('#follow').hasClass('popup')) {
+    $('#follow').stop().fadeOut(200);
+    $('#follow').removeClass("popup");}
+    else {
+    $('#follow').stop().fadeIn(200);
+    $('#follow').addClass("popup");
+    return false;}
+    });
+    $(".close").click(function(){
+    $('#follow').stop().fadeOut(200);
+    $('#follow').removeClass("popup");
+    })
+  };  
+})
 .directive('filterHandle', function() {
   return function(scope, element, attrs) {
     var filters = $("#filters");
