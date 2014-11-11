@@ -7,6 +7,12 @@ alt
 
 	.when('/', { templateUrl: '/pages/index' })
 	/* ==========================================================================
+	Info page
+	========================================================================== */
+	.when('/info', { templateUrl: '/pages/info/about' })
+	.when('/join-us', { templateUrl: '/pages/info/join-us' })
+	.when('/customer-care', { templateUrl: '/pages/info/customer-care' })
+	/* ==========================================================================
 	Pro Account page
 	========================================================================== */
     .when('/account/recentnews', { templateUrl: '/pages/account/vip-recentNews-content' })

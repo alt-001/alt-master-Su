@@ -3,7 +3,7 @@ include partials/account-top
   ul(masonry)
     li.masonry-brick.col-xs-3(ng-repeat="product in products | orderBy: sort |  filter:productsFilterService.activeFilters" hover-show)
       a(href='/product')
-        img.product-cover.img-responsive(ng-src="{{product.image}}")
+        img.product-cover.img-responsive(ng-src="/assets/{{product.image}}")
       .tag
         .col-xs-2
           .tag-trigger

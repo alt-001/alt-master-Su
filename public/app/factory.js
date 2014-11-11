@@ -3,9 +3,17 @@ alt
 	var ProductsResource = $resource('/data/products.json');  
 	return ProductsResource;
 })
+.factory('brandProduct', function($resource) {
+	var brandProductResource = $resource('/data/brand-products.json');  
+	return brandProductResource;
+})
 .factory('brandTrace', function($resource) {
-	var BrandTraceResource = $resource('/data/brand-trace.json');  
+	var BrandTraceResource = $resource('/data/brand-trace.json');
 	return BrandTraceResource;
+})
+.factory('brandInspiration', function($resource) {
+	var BrandInspirationResource = $resource('/data/brand-inspiration.json');
+	return BrandInspirationResource;
 })
 .factory('searches', function($resource) {
 	var SearchesResource = $resource('/data/searches.json');  

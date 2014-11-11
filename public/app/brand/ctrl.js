@@ -35,8 +35,14 @@ alt
       return currentRoute[2] === 'products' ? 'true' : 'false';
   };
 })
+.controller('brandProductCtrl', function($scope, brandProduct) {
+  $scope.products = brandProduct.query();
+})
 .controller('brandTraceCtrl', function($scope, brandTrace) {
   $scope.traces = brandTrace.query();
+})
+.controller('brandInspirationCtrl', function($scope, brandInspiration) {
+  $scope.inspirations = brandInspiration.query();
 })
 .controller('accountCtrl', function($scope, cartService) {
   $scope.carts = cartService.query();

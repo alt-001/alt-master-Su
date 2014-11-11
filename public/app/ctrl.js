@@ -22,6 +22,9 @@ alt
   $scope.products = products.query();
   $scope.productsFilterService = productsFilterService; 
 })
+.controller('productsHomeCtrl', function($scope, productsHome) {
+  $scope.productsHome = productsHome.query(); 
+})
 .controller('filterCtrl', function($scope, productsFilterGender, productsFilterType, productsFilterColor, productsFilterService) { 
     $scope.productsFilterService = productsFilterService;
     $scope.genders = productsFilterGender.query();
