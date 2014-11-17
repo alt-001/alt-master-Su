@@ -3,7 +3,7 @@ include partials/account-top
   ul(masonry)
     li.masonry-brick.col-xs-3(ng-repeat="product in products | orderBy: sort |  filter:productsFilterService.activeFilters" hover-show)
       a(href='/product')
-        img.product-cover.img-responsive(ng-src="/assets/{{product.image}}")
+        img.product-cover.img-responsive(ng-src="{{product.image}}")
       .tag
         .col-xs-2
           .tag-trigger
@@ -18,11 +18,11 @@ include partials/account-top
               .col-xs-2.text-right
                 a(href='#')
                   button.remove X
-            .col-xs-12 
+            .col-xs-12
               | {{product.price | currency: "£"}}
-            .col-xs-12 
-              i from 
-              a(href='/brand/chapter/story')
+            .col-xs-12
+              i from
+              a(href='/brand/products/all')
                | {{product.designer}}
             .col-xs-12
               .col-xs-6

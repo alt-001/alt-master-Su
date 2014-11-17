@@ -26,6 +26,11 @@ p
   font-size 14px
   line-height 1.6
 
+a
+  &:hover
+    color grey
+    text-decoration none
+
 .modal-body
   input,textarea
     height 30px
@@ -102,6 +107,21 @@ p
   border 0
   font-size 0
 
+#gallery_01
+  img
+    border 1px solid white
+.zoom
+  a.active
+    img 
+      border 1px solid #cbcbcb !important
+  a
+    img
+      &:hover
+        border 1px solid #cbcbcb
+
+.zoomContainer
+  width 100%
+
 .panel-title
   font-family 'PT Sans'
   a
@@ -132,9 +152,24 @@ p
   width 100%
   background  #000
   display  none
+  
+
+.zoomWindowContainer
+  .zoomWindow
+    width 196% !important
+    border none !important
+    height 214% !important
 /**
  * Correct `block` display not defined in IE 8/9.
  */
+ 
+input,a,button
+  &:focus,
+  &:invalid
+    color black
+    box-shadow none
+    -webkit-box-shadow none
+    outline none
 
 article,
 aside,

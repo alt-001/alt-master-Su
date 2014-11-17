@@ -16,20 +16,20 @@
   border: 1px solid #d8d8d8;
   margin-bottom: 20px;
 }
-p {
+.info-wrapper p {
   margin-bottom: 30px;
 }
-a {
+.info-wrapper a {
   color: #000;
 }
-#tabCareer .panel-heading a {
+.info-wrapper #tabCareer .panel-heading a {
   margin: 0;
 }
-#tabCareer .panel-collapse:last-child,
-#tabCareer p:last-child {
+.info-wrapper #tabCareer .panel-collapse:last-child,
+.info-wrapper #tabCareer p:last-child {
   margin-bottom: 0;
 }
-.btn-group button {
+.info-wrapper .btn-group button {
   margin-top: 10px;
   margin-right: 10px;
   color: #646464;
@@ -42,7 +42,7 @@ a {
   border: 0;
   padding: 5px 20px;
 }
-.btn-group button.send {
+.info-wrapper .btn-group button.send {
   background-color: #646464;
   color: #fff;
 }

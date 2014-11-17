@@ -25,6 +25,11 @@ alt
 .controller('productsHomeCtrl', function($scope, productsHome) {
   $scope.productsHome = productsHome.query(); 
 })
+.controller('numberController', function($scope) {
+    $scope.rating = 1;     
+    $scope.minRating = 0;
+    $scope.maxRating = 50;
+})
 .controller('filterCtrl', function($scope, productsFilterGender, productsFilterType, productsFilterColor, productsFilterService) { 
     $scope.productsFilterService = productsFilterService;
     $scope.genders = productsFilterGender.query();

@@ -1,4 +1,11 @@
-#signup {
+.signup-wrapper {
+  width: 100%;
+  height: 100%;
+  background: rgba(218,218,218,0.7);
+  position: fixed;
+  z-index: 99;
+}
+.signup-wrapper #signup {
   bottom: 0;
   height: 400px;
   left: 0;
@@ -11,7 +18,7 @@
   background-color: #fff;
   opacity: 0.95;
 }
-#signup .title {
+.signup-wrapper #signup .title {
   color: #000;
   font: 700 25px/1.2 'PT Sans';
   position: absolute;
@@ -20,7 +27,7 @@
   width: 100%;
   z-index: 300;
 }
-#signup .divider {
+.signup-wrapper #signup .divider {
   height: 12px;
   margin-left: 20px;
   position: absolute;
@@ -28,18 +35,18 @@
   width: 250px;
   z-index: 300;
 }
-#signup .divider.with {
+.signup-wrapper #signup .divider.with {
   background-image: url("/assets/images/signup_divider1.png");
   background-position: center center;
   background-repeat: no-repeat;
 }
-#signup .divider.or {
+.signup-wrapper #signup .divider.or {
   background-image: url("/assets/images/signup_divider2.png");
   background-position: center center;
   background-repeat: no-repeat;
   top: 225px;
 }
-#signup .email {
+.signup-wrapper #signup .email {
   color: #000;
   font: 700 16px/1.2 'PT Sans';
   height: 40px;
@@ -50,7 +57,7 @@
   width: 250px;
   z-index: 300;
 }
-#signup .password {
+.signup-wrapper #signup .password {
   color: #000;
   font: 700 16px/1.2 'PT Sans';
   height: 40px;
@@ -61,7 +68,7 @@
   width: 250px;
   z-index: 300;
 }
-#signup .submit {
+.signup-wrapper #signup .submit {
   border: 1px solid #000;
   color: #000;
   font: 700 16px/1.2 'PT Sans';
@@ -73,7 +80,7 @@
   width: 250px;
   z-index: 300;
 }
-#signup .submit:hover {
+.signup-wrapper #signup .submit:hover {
   color: #fff;
   background-color: #000;
   border: 1px solid #757576;
@@ -82,7 +89,7 @@
   -o-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
-#signup .social {
+.signup-wrapper #signup .social {
   height: 30px;
   left: 50px;
   position: absolute;
@@ -90,16 +97,16 @@
   width: 230px;
   z-index: 300;
 }
-#signup .social img {
+.signup-wrapper #signup .social img {
   margin-right: 24px;
   opacity: 0.6;
   width: 30px;
 }
-#signup .social img:hover {
+.signup-wrapper #signup .social img:hover {
   transition: all 0.8s ease;
   opacity: 1;
 }
-#signup p {
+.signup-wrapper #signup p {
   color: #878787;
   font: 300 14px/1.2 'PT Sans';
   height: 30px;
@@ -110,11 +117,11 @@
   width: 250px;
   z-index: 300;
 }
-#signup p a {
+.signup-wrapper #signup p a {
   color: #000;
   cursor: point;
 }
-#signup .close {
+.signup-wrapper #signup .close {
   background-image: url("/assets/images/follow_cross.png");
   background-position: center center;
   background-repeat: no-repeat;
@@ -126,7 +133,7 @@
   z-index: 300;
   transition: all 0.5s ease;
 }
-#signup .shadow {
+.signup-wrapper #signup .shadow {
   position: absolute;
   z-index: 300;
   width: 280px;

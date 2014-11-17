@@ -68,7 +68,7 @@ $(document).on('mouseleave', '#vipSidebar li a img', function() {
      
 });
 
-$(document).on("click", "li", function () {
+$(document).on("click", ".history-messages", function () {
     $( this ).toggleClass( "show-full" ).siblings().removeClass('show-full');
 });
-
+    
