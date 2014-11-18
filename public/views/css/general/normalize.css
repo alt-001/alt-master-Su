@@ -115,6 +115,17 @@ a:hover {
 .zoom a img:hover {
   border: 1px solid #cbcbcb;
 }
+.modal-body img {
+  margin-left: 25px;
+  margin-bottom: 20px;
+  width: 60px;
+}
+#zoomContainer {
+  z-index: 0;
+}
+#products .modal-dialog {
+  width: 335px;
+}
 .zoomContainer {
   width: 100%;
 }
@@ -125,6 +136,7 @@ a:hover {
   text-decoration: none;
 }
 .modal-dialog {
+  font-family: 'PT Sans';
   margin: 10% auto;
   z-index: 9999;
 }
