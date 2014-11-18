@@ -3,7 +3,7 @@
 .col-xs-9
   #products(ng-controller="brandProductCtrl")
     ul(masonry)
-      li.masonry-brick.col-xs-6(ng-repeat="product in products" hover-show)
+      li.masonry-brick.col-xs-6(ng-repeat="product in products | filter:feature:'y' | orderBy:'-id'" hover-show)
         a(href='/product')
           img.product-cover.img-responsive(ng-src="{{product.image}}")
         .tag

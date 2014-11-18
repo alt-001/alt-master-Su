@@ -59,7 +59,8 @@ $(document).on('mouseover', '#vipSidebar li:nth-child(4) a img', function() {
      
 });
 
-
+$('.nav-tabs a:first').tab('show');
+     
 
 $(document).on('mouseleave', '#vipSidebar li a img', function() {
 

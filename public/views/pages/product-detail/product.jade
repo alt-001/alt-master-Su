@@ -1,166 +1,135 @@
-.col-xs-4
-  #product-sidebar
-    .zoom
-      .cover
-        img#onzoom(src='/assets/images/product-details/product1.jpg', data-zoom-image='/assets/images/product-details/product1_big.jpg')
-      .carousels(ng-controller="productCtrl")
-        #productCarousel1.carousel.slide
-          .carousel-inner
-            .item.active
-              ul#gallery
-                li.col-xs-2(ng-repeat="item in productThumb")
-                  a(href='#', data-image='{{item.medium}}', data-zoom-image='{{item.big}}')
-                    img#onzoom.img-responsive(ng-src='{{item.thumb}}')
-          .clearfix
-    //- .zoom
-    //-   .cover
-    //-     img#onzoom(src='/assets/images/product-details/product1.jpg', data-zoom-image='/assets/images/product-details/product1_big.jpg')
-    //-   .carousels
-    //-     #productCarousel1.carousel.slide
-    //-       .carousel-inner
-    //-         .item.active
-    //-           ul#gallery
-    //-             li.col-xs-2
-    //-               a(href='#', data-image='/assets/images/product-details/product1.jpg', data-zoom-image='/assets/images/product-details/product1_big.jpg')
-    //-                 img#onzoom.img-responsive(ng-src='/assets/images/product-details/product1_small.jpg')
-    //-             li.col-xs-2
-    //-               a(href='#', data-image='/assets/images/product-details/product2.jpg', data-zoom-image='/assets/images/product-details/product2_big.jpg')
-    //-                 img#onzoom.img-responsive(ng-src='/assets/images/product-details/product2_small.jpg')
-    //-             li.col-xs-2
-    //-               a(href='#', data-image='/assets/images/product-details/product3.jpg', data-zoom-image='/assets/images/product-details/product3_big.jpg')
-    //-                 img#onzoom.img-responsive(ng-src='/assets/images/product-details/product3_small.jpg')
-    //-             li.col-xs-2
-    //-               a(href='#', data-image='/assets/images/product-details/product4.jpg', data-zoom-image='/assets/images/product-details/product4_big.jpg')
-    //-                 img#onzoom.img-responsive(ng-src='/assets/images/product-details/product4_small.jpg')
-    //-             li.col-xs-2
-    //-               a(href='#', data-image='/assets/images/product-details/product5.jpg', data-zoom-image='/assets/images/product-details/product5_big.jpg')
-    //-                 img#onzoom.img-responsive(ng-src='/assets/images/product-details/product5_small.jpg')
-    //-             li.col-xs-2
-    //-               a(href='#', data-image='/assets/images/product-details/product5.jpg', data-zoom-image='/assets/images/product-details/product5_big.jpg')
-    //-                 img#onzoom.img-responsive(ng-src='/assets/images/product-details/product6_small.png')
-    //-       .clearfix
-    .info
-      ul.parent.size
-        li.col-xs-3 Size
-        form.col-xs-9
-          select
-            option(value="") xs - ø 5.4cm
-            option(value="") s - ø 6.0cm
-            option(value="") M - ø 6.4cm
-            option(value="") L - ø 7cm
-            option(value="") XL - ø 8cm
-            option(value="") XXL - ø 9.5cm
-      .clearfix
-      ul.parent.quantity
-        li Quantity
-          .input-append.spinner.pull-right(data-trigger="spinner")
-            input(type="text" value="1" data-rule="quantity")
-            .add-on.pull-right
-              a.spin-up(href="javascript:;" data-spin="up") +
-              a.spin-down(href="javascript:;" data-spin="down") -
-      .row
-        .col-xs-6
-          button.addtocart Add to Cart
-        .col-xs-6
-          button.buy Buy
-        .col-xs-6.pull-left
-          .smalllink
-            p
-              a(href='#') Shipping, Exchange & Refund
-              a(href='#') Help & Contact
+#product-zoom
+  .col-xs-4
+    #product-sidebar
+      .zoom
+        .cover
+          img#onzoom(src='/assets/images/product-details/product1.jpg', data-zoom-image='/assets/images/product-details/product1_big.jpg')
+        .carousels(ng-controller="productCtrl")
+          #productCarousel1.carousel.slide
+            .carousel-inner
+              .item.active
+                ul#gallery
+                  li.col-xs-2(ng-repeat="item in productThumb")
+                    a(href='#', data-image='{{item.medium}}', data-zoom-image='{{item.big}}')
+                      img#onzoom.img-responsive(ng-src='{{item.thumb}}' zoom)
+            .clearfix
+      .info
+        ul.parent.size
+          li.col-xs-3 Size
+          form.col-xs-9
+            select
+              option(value="") xs - ø 5.4cm
+              option(value="") s - ø 6.0cm
+              option(value="") M - ø 6.4cm
+              option(value="") L - ø 7cm
+              option(value="") XL - ø 8cm
+              option(value="") XXL - ø 9.5cm
         .clearfix
-.col-xs-8
-  #product-details
-    .row
-      .col-xs-8
-        span.brand.pull-left
-          i From
+        ul.parent.quantity
+          li Quantity
+            .input-append.spinner.pull-right(data-trigger="spinner")
+              input(type="text" value="1" data-rule="quantity")
+              .add-on.pull-right
+                a.spin-up(href="javascript:;" data-spin="up") +
+                a.spin-down(href="javascript:;" data-spin="down") -
+        .row
+          .col-xs-6
+            button.addtocart Add to Cart
+          .col-xs-6
+            button.buy Buy
+          .col-xs-6.pull-left
+            .smalllink
+              p
+                a(href='#') Shipping, Exchange & Refund
+                a(href='#') Help & Contact
+          .clearfix
+  .col-xs-8
+    #product-details
+      .row
+        .col-xs-8
+          span.brand.pull-left
+            i From
+            a(href='#') byAMT
+            button Follow
+          .share-wrapper.pull-left
+            a.pull-left.share(href='#') Share...
+            .share-expand.pull-left
+              a(href='#')
+                img(src='/assets/images/icon-weibo.png')
+              a(href='#')
+                img(src='/assets/images/icon-weixin.png')
+              a(href='#')
+                img(src='/assets/images/icon-qzone.png')
+              a(href='#')
+                img(src='/assets/images/fb.png')
+              a(href='#')
+                img(src='/assets/images/twitter_2.png')
+              a(href='#')
+                img(src='/assets/images/email-icon.png')
+        .col-xs-4.text-right
+          button.chat_btn Chat Online
+      .details
+        .col-xs-8
+          .title 
+            | Bubble Bracelet - clear acrylic 
+          .price 
+            | £12
+          .vat
+            i VAT & Import duty incl.
+        .col-xs-4.text-right
+          ul.delivery
+            li Product code: 1234556
+            li Delivery & Returns: £5 UK. £10 ROW. Free return in UK.
+            li
+              img(src='/assets/images/QRcode.png')
+        .clearfix
+        .tabs(ng-controller="productCtrl")
+          ul.nav.nav-tabs
+            li.active
+              a.tab(href='#tab-desc' role="tab" data-toggle="tab") Description
+            li
+              a.tab(href='#tab-notes' role="tab" data-toggle="tab") Designer Notes
+            li
+              a.tab(href='#tab-advice' role="tab" data-toggle="tab") Materials and Care Advice
+            li
+              a.tab(href='#tab-size' role="tab" data-toggle="tab") Size Help
+          .tab-content
+            #tab-desc.tab-pane.active {{desc}}
+            #tab-notes.tab-pane {{notes}}
+            #tab-advice.tab-pane {{advice}}
+            #tab-size.tab-pane {{size}}
+        .carousel-title More from 
           a(href='#') byAMT
-          button Follow
-        .share-wrapper.pull-left
-          a.pull-left.share(href='#') Share...
-          .share-expand.pull-left
-            a(href='#')
-              img(src='/assets/images/icon-weibo.png')
-            a(href='#')
-              img(src='/assets/images/icon-weixin.png')
-            a(href='#')
-              img(src='/assets/images/icon-qzone.png')
-            a(href='#')
-              img(src='/assets/images/fb.png')
-            a(href='#')
-              img(src='/assets/images/twitter_2.png')
-            a(href='#')
-              img(src='/assets/images/email-icon.png')
-      .col-xs-4.text-right
-        button.chat_btn Chat Online
-    .details
-      .col-xs-8
-        .title 
-          | Bubble Bracelet - clear acrylic 
-        .price 
-          | £12
-        .vat
-          i VAT & Import duty incl.
-      .col-xs-4.text-right
-        ul.delivery
-          li Product code: 1234556
-          li Delivery & Returns: £5 UK. £10 ROW. Free return in UK.
-          li
-            img(src='/assets/images/QRcode.png')
+        .carousels(ng-controller="productCtrl" style="width:800px; height: auto; margin: 0 auto")
+          #productCarousel1.carousel.slide
+            .carousel-inner
+              .item.active
+                ul
+                  li(ng-repeat="item in carousel1" style="float: left")
+                    img(src="{{item.img}}")
+              .item
+                ul
+                  li(ng-repeat="item in carousel2" style="float: left")
+                    img(src="{{item.img}}")
+            a.left.carousel-control(href='#productCarousel1', role='button', data-slide='prev')
+              span
+            a.right.carousel-control(href='#productCarousel1', role='button', data-slide='next')
+              span
+        .clearfix
+        .carousel-title You may also like 
+        .carousels(ng-controller="productCtrl" style="width:800px; height: auto; margin: 0 auto")
+          #productCarousel2.carousel.slide
+            .carousel-inner
+              .item.active
+                ul
+                  li(ng-repeat="item in carousel2" style="float: left")
+                    img(src="{{item.img}}")
+              .item
+                ul
+                  li(ng-repeat="item in carousel1" style="float: left")
+                    img(src="{{item.img}}")
+            a.left.carousel-control(href='#productCarousel2', role='button', data-slide='prev')
+              span
+            a.right.carousel-control(href='#productCarousel2', role='button', data-slide='next')
+              span
       .clearfix
-      .tabs
-        ul.nav.nav-tabs(ng-controller="productCtrl")
-          li.active
-            a.tab(href='#tab-desc' role="tab" data-toggle="tab") Description
-          li
-            a.tab(href='#tab-notes' role="tab" data-toggle="tab") Designer Notes
-          li
-            a.tab(href='#tab-advice' role="tab" data-toggle="tab") Materials and Care Advice
-          li
-            a.tab(href='#tab-size' role="tab" data-toggle="tab") Size Help
-        .tab-content
-          #tab-desc.tab-pane.active {{product.description}}
-          #tab-notes.tab-pane {{product.notes}}
-          #tab-advice.tab-pane {{product.advice}}
-          #tab-size.tab-pane {{product.size}}
-      .carousel-title More from 
-        a(href='#') byAMT
-      .carousels(ng-controller="productCtrl" style="width:800px; height: auto; margin: 0 auto")
-        #productCarousel1.carousel.slide
-          .carousel-inner
-            .item.active
-              ul
-                li(ng-repeat="item in carousel1" style="float: left")
-                  img(src="{{item.img}}")
-            .item
-              ul
-                li(ng-repeat="item in carousel2" style="float: left")
-                  img(src="{{item.img}}")
-          a.left.carousel-control(href='#productCarousel1', role='button', data-slide='prev')
-            span
-          a.right.carousel-control(href='#productCarousel1', role='button', data-slide='next')
-            span
-      .clearfix
-      .carousel-title You may also like 
-      .carousels(ng-controller="productCtrl" style="width:800px; height: auto; margin: 0 auto")
-        #productCarousel2.carousel.slide
-          .carousel-inner
-            .item.active
-              ul
-                li(ng-repeat="item in carousel2" style="float: left")
-                  img(src="{{item.img}}")
-            .item
-              ul
-                li(ng-repeat="item in carousel1" style="float: left")
-                  img(src="{{item.img}}")
-          a.left.carousel-control(href='#productCarousel2', role='button', data-slide='prev')
-            span
-          a.right.carousel-control(href='#productCarousel2', role='button', data-slide='next')
-            span
-    .clearfix
-
-script.
-  $("#onzoom").elevateZoom(
-    {gallery:'gallery', cursor: 'crosshair', galleryActiveClass: 'active'}
-  );

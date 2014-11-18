@@ -30,6 +30,15 @@ alt
     }
   };
 })
+.directive('zoom', function() {
+  return function(scope, element, attrs) {
+    if (scope.$last){
+      $("#onzoom").elevateZoom(
+        {gallery:'gallery', cursor: 'crosshair', galleryActiveClass: 'active'}
+      );
+    }
+  };
+})
 .directive('fancybox', function() {
   return {
       // Restrict it to be an attribute in this case

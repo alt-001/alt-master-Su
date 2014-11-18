@@ -159,6 +159,9 @@
   overflow: scroll;
   border-bottom: 1px solid #cbcbcb;
 }
+#product-details .tabs .tab-pane p {
+  font-family: "source sans pro";
+}
 #product-details .carousels {
   margin-top: 20px;
 }
