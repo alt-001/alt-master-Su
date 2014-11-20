@@ -3,7 +3,7 @@ alt
 })
 .controller('searchCtrl', function($scope, $routeParams, $location, searches){
   $scope.searches = searches.query();
-  
+    
   $scope.sections = [
     {value: "name", text: "name"}, 
     {value: "id", text: "created"}, 
