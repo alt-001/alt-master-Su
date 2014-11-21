@@ -3,13 +3,13 @@ include partials/info-top
   .tabs
     ul.nav.nav-tabs(role="tablist")
       li
-        a.tab.active(href='#tabBrand' role="tab" data-toggle="tab") Open brand account
+        a.tab.active(href='#tabBrand' role="tab" data-toggle="tab" target="_self") Open brand account
       li
-        a.tab(href='#tabPro' role="tab" data-toggle="tab") Open Pro account
+        a.tab(href='#tabPro' role="tab" data-toggle="tab" target="_self") Open Pro account
       li
-        a.tab(href='#tabCareer' role="tab" data-toggle="tab") Career Opportunity
+        a.tab(href='#tabCareer' role="tab" data-toggle="tab" target="_self") Career Opportunity
       li
-        a.tab(href='#moreInfo' role="tab" data-toggle="tab")  further information
+        a.tab(href='#moreInfo' role="tab" data-toggle="tab" target="_self")  further information
     .tab-content
       #tabBrand.tab-pane.fade.active
         p
@@ -66,3 +66,5 @@ include partials/info-top
         .btn-group
           button(type="submit").send Send
           button Cancel
+script.
+  $('.nav-tabs a:first').tab('show');

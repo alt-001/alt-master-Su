@@ -29,7 +29,6 @@ include partials/vip-top
           | Su Liang
         p.timestamp.col-xs-8
           | 23.july.2014 9:10 am
-        
         p.desc.col-xs-12
           | Hey man, Hope all well,Last night I was having a gchat with my friend. Parts of that is all... 
         p.reply.col-xs-12
@@ -56,3 +55,7 @@ include partials/vip-top
     .clearfix
     button.cancel discard
     button.submit send
+script.
+  $(document).on("click", ".history-messages", function () {
+    $( this ).toggleClass( "show-full" ).siblings().removeClass('show-full');
+  });

@@ -69,12 +69,16 @@ a:hover {
 }
 .nav-tabs li.active a:hover {
   border: none;
+  background: transparent url("/assets/images/navi_arrow.png") center bottom no-repeat;
 }
 .nav-tabs li a {
   color: #808080;
   padding-bottom: 20px;
   margin-right: 40px;
   margin-bottom: 0 !important;
+  transition: all 0.3s ease-in-out;
+  border: none;
+  background: transparent url("/assets/images/navi_arrow.png") center 80px no-repeat;
 }
 .nav-tabs li a:hover {
   border: none;

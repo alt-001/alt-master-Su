@@ -121,32 +121,6 @@
 #product-details .details .carousel-title a {
   text-decoration: underline;
 }
-#product-details .tabs ul li:hover a,
-#product-details .tabs ul li.active a {
-  background-color: transparent;
-  border: 0;
-}
-#product-details .tabs ul li a {
-  font-weight: 700;
-  font-size: 16px;
-  padding-bottom: 15px;
-  border: 0;
-  color: #808080;
-  background-image: url("/assets/images/navi_arrow.png");
-  background-position: center 50px;
-  background-repeat: no-repeat;
-  transition: all 0.3s ease-in-out 0s;
-}
-#product-details .tabs ul li a:hover,
-#product-details .tabs ul li a.active {
-  background-image: url("/assets/images/navi_arrow.png");
-  background-position: center bottom;
-  background-repeat: no-repeat;
-  box-shadow: none;
-  color: #000;
-  border: 0;
-  background-color: transparent;
-}
 #product-details .tabs .tab-pane {
   font-family: "source sans pro";
   font-size: 16px;

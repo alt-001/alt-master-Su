@@ -2,7 +2,6 @@ alt
 .controller('brandChapterCtrl', function($scope, $routeParams, $location) { 
   $scope.onchapter = $routeParams.chapter;
   $scope.onfilter = $routeParams.filter;
-
   $scope.chapters = [
     { name: 'products', 
       url: '/brand/products/all',
@@ -24,12 +23,10 @@ alt
     { name: 'inspirations', url: '/brand/inspirations' },
     { name: 'trace', url: '/brand/trace' }
   ]
-
   $scope.navClass = function (chapter) {
       var currentRoute = $location.path().split('/');
       return chapter === currentRoute[2] ? 'active' : '';
   };
-
    $scope.isProduct = function () {
       var currentRoute = $location.path().split('/');
       return currentRoute[2] === 'products' ? 'true' : 'false';

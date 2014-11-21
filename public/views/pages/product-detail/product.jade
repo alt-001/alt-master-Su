@@ -1,10 +1,10 @@
-#product-zoom
+#product-zoom(ng-controller="productCtrl")
   .col-xs-4
     #product-sidebar
       .zoom
         .cover
           img#onzoom(src='/assets/images/product-details/product1.jpg', data-zoom-image='/assets/images/product-details/product1_big.jpg')
-        .carousels(ng-controller="productCtrl")
+        .carousels
           #productCarousel1.carousel.slide
             .carousel-inner
               .item.active
@@ -18,12 +18,7 @@
           li.col-xs-3 Size
           form.col-xs-9
             select
-              option(value="") xs - ø 5.4cm
-              option(value="") s - ø 6.0cm
-              option(value="") M - ø 6.4cm
-              option(value="") L - ø 7cm
-              option(value="") XL - ø 8cm
-              option(value="") XXL - ø 9.5cm
+              option(ng-repeat="item in size" value="") {{item.size}}
         .clearfix
         ul.parent.quantity
           li Quantity
@@ -49,7 +44,7 @@
         .col-xs-8
           span.brand.pull-left
             i From
-            a(href='#') byAMT
+            a(href='/brand') {{brandName}}
             button Follow
           .share-wrapper.pull-left
             a.pull-left.share(href='#') Share...
@@ -71,9 +66,9 @@
       .details
         .col-xs-8
           .title 
-            | Bubble Bracelet - clear acrylic 
+            {{productName}} 
           .price 
-            | £12
+            {{price | currency: "£"}}
           .vat
             i VAT & Import duty incl.
         .col-xs-4.text-right
@@ -81,26 +76,26 @@
             li Product code: 1234556
             li Delivery & Returns: £5 UK. £10 ROW. Free return in UK.
             li
-              img(src='/assets/images/QRcode.png')
+              img(src='{{qr}}')
         .clearfix
-        .tabs(ng-controller="productCtrl")
-          ul.nav.nav-tabs
+        .tabs
+          ul.nav.nav-tabs(role="tablist")
             li.active
-              a.tab(href='#tab-desc' role="tab" data-toggle="tab") Description
+              a.tab(href='#tab-desc' role="tab" data-toggle="tab" target="_self") Description
             li
-              a.tab(href='#tab-notes' role="tab" data-toggle="tab") Designer Notes
+              a.tab(href='#tab-notes' role="tab" data-toggle="tab" target="_self") Designer Notes
             li
-              a.tab(href='#tab-advice' role="tab" data-toggle="tab") Materials and Care Advice
+              a.tab(href='#tab-advice' role="tab" data-toggle="tab" target="_self") Materials and Care Advice
             li
-              a.tab(href='#tab-size' role="tab" data-toggle="tab") Size Help
+              a.tab(href='#tab-size' role="tab" data-toggle="tab" target="_self") Size Help
           .tab-content
             #tab-desc.tab-pane.active {{desc}}
             #tab-notes.tab-pane {{notes}}
             #tab-advice.tab-pane {{advice}}
-            #tab-size.tab-pane {{size}}
+            #tab-size.tab-pane {{sizeHelp}}
         .carousel-title More from 
-          a(href='#') byAMT
-        .carousels(ng-controller="productCtrl" style="width:800px; height: auto; margin: 0 auto")
+          a(href='/brandåå') {{brandName}}
+        .carousels(style="width:800px; height: auto; margin: 0 auto")
           #productCarousel1.carousel.slide
             .carousel-inner
               .item.active
@@ -117,7 +112,7 @@
               span
         .clearfix
         .carousel-title You may also like 
-        .carousels(ng-controller="productCtrl" style="width:800px; height: auto; margin: 0 auto")
+        .carousels(style="width:800px; height: auto; margin: 0 auto")
           #productCarousel2.carousel.slide
             .carousel-inner
               .item.active
@@ -133,3 +128,5 @@
             a.right.carousel-control(href='#productCarousel2', role='button', data-slide='next')
               span
       .clearfix
+script.
+  $('.nav-tabs a:first').tab('show');

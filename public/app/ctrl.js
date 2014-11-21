@@ -3,7 +3,6 @@ alt
 })
 .controller('searchCtrl', function($scope, $routeParams, $location, searches){
   $scope.searches = searches.query();
-    
   $scope.sections = [
     {value: "name", text: "name"}, 
     {value: "id", text: "created"}, 
@@ -15,7 +14,6 @@ alt
   if (!_.isEmpty($scope.section)) {
     $scope.sectionText = $scope.section[0]['text'];
   }
-
   $scope.criteria = $location.search().target;
 })
 .controller('productsCtrl', function($scope, products, productsFilterService) {
@@ -50,19 +48,4 @@ alt
 })
 .controller('sortCtrl', function($scope, productsSort) {
     $scope.sorts = productsSort.query();
-})
-.controller('brandChapterCtrl', function($scope, $routeParams, $location) { 
-    $scope.onchapter = $routeParams.chapter;
-    $scope.chapters = [
-        { name: 'products', url: '/brand/products' },
-        { name: 'moment', url: '/brand/moment' },
-        { name: 'story', url: '/brand/story' },
-        { name: 'talk', url: '/brand/talk' },
-        { name: 'inspirations', url: '/brand/inspirations' },
-        { name: 'trace', url: '/brand/trace' }
-    ]
-    $scope.navClass = function (chapter) {
-        var currentRoute = $location.path().split('/');
-        return chapter === currentRoute[2] ? 'active' : '';
-    };
 });
