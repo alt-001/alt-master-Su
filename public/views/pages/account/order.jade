@@ -1,5 +1,5 @@
 include partials/account-top
-#order
+#order(ng-controller="accountCtrl")
   .order-wrapper.col-xs-11
     .order-container
       .col-xs-12.text-uppercase.order-header
@@ -9,15 +9,14 @@ include partials/account-top
         .col-xs-6.pull-right
           b 28/10/2013
       .col-xs-8.order-thumb
-        .col-xs-6.order-thumb-cell
+        .col-xs-6.order-thumb-cell(ng-repeat="cart in carts")
           .col-xs-6
-            img.img-responsive(src="/assets/images/order1.jpg")
+            img.img-responsive(ng-src="{{cart.img}}")
           .col-xs-6
             a.text-uppercase.order-name(herf="#")
-              b Sibling of London
+              b {{cart.brand}}
               br
-              p Mini pencil skirt tartans 
-            p
+              p {{cart.product}}
               | Price:£290.00
               br
               | Colour: black
