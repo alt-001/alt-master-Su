@@ -7,6 +7,14 @@ alt
 
   .when('/', { templateUrl: '/pages/index' })
   /* ==========================================================================
+  explore page
+  ========================================================================== */
+  .when('/explore', { templateUrl: '/pages/explore/explore' })
+    /* ==========================================================================
+  showroom page
+  ========================================================================== */
+  .when('/showroom', { templateUrl: '/pages/showroom/showroom' })
+  /* ==========================================================================
   Search page
   ========================================================================== */
   .when('/search', { templateUrl: '/pages/search/search' })
@@ -41,6 +49,7 @@ alt
   /* ==========================================================================
   Account page
   ========================================================================== */
+  .when('/account/love-looks', { templateUrl: '/pages/account/love-looks' })
   .when('/account/love-products', { templateUrl: '/pages/account/love-products' })
   .when('/account/love-brand', { templateUrl: '/pages/account/love-brand' })
   .when('/account/order', { templateUrl: '/pages/account/order' })

@@ -5,36 +5,21 @@ include partials/vip-top
   #vipMyConnectionsContent
     .top-bar
       .col-xs-8.top-bar-header
-        | My Connections
+        | his Connections
       .col-xs-4
         form(ng-model="vipSearch")
           .col-xs-8.pull-right
             input.search(type='text' placeholder='Search').col-xs-10
             button(type="submit").addon.col-xs-2
               span.glyphicon.glyphicon-search
-    .connections
-      .col-xs-4
+    .connections(ng-controller="accountCtrl")
+      .col-xs-4(ng-repeat="person in people | orderBy:random" style="margin-bottom:40px;") 
         .media
           a.pull-left(href='#')
-            img.media-object(ng-src='/assets/images/pro/brand.jpg')
+            img.media-object(ng-src='{{person.img}}')
           .media-body
-            h4.media-heading Su Liang
-            | Designer
-      .col-xs-4
-        .media
-          a.pull-left(href='#')
-            img.media-object(ng-src='/assets/images/pro/blogger.jpg')
-          .media-body
-            h4.media-heading Su Liang
-            | Designer
-
-      .col-xs-4
-        .media
-          a.pull-left(href='#')
-            img.media-object(ng-src='/assets/images/pro/celebrity.jpg')
-          .media-body
-            h4.media-heading Su Liang
-            | Designer
+            h4.media-heading {{person.name}}
+            | {{person.role}}
     .clearfix
     ul.pager
       li.previous.disabled

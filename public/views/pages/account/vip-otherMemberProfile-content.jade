@@ -2,49 +2,48 @@ include partials/vip-top
 .col-xs-3
   include partials/vip-sidebar-other
 .col-xs-9
-  #vipOtherMemberProfileContent
+  #vipOtherMemberProfileContent(ng-controller="accountCtrl")
     h4.col-xs-12 Recent news
     .updates
       .lists
         .col-xs-3.media-info
-          .thumbnail
-            img.media-object(ng-src='/assets/images/pro/blogger1.jpg')
+          .thumbnail(ng-repeat="person in people | orderBy:random | limitTo:quantity1") 
+            img.media-object(ng-src='{{person.img}}')
             .caption
               h5.name
-                | Minne Hayes
+                a(href="/account/otherprofile-connected" style="color:black;") {{person.name}}
               p.role
-                | Photographer
+                {{person.role}}
         .col-xs-3.media-info
-          .thumbnail
-            img.media-object(ng-src='/assets/images/pro/brand4.jpg')
+          .thumbnail(ng-repeat="person in people | orderBy:random | limitTo:quantity1") 
+            img.media-object(ng-src='{{person.img}}')
             .caption
               h5.name
-                | Minne Hayes
+                a(href="/account/otherprofile-connected" style="color:black;") {{person.name}}
               p.role
-                | Photographer
-          span.connection 
+                {{person.role}}
+              span.connection 
           p.duration
             | 1 day ago
         .col-xs-3.media-info
-          .thumbnail
-            img.media-object(ng-src='/assets/images/pro/profile_1173171134_75sq_1396544751.jpg')
+          .thumbnail(ng-repeat="person in people | orderBy:random | limitTo:quantity1") 
+            img.media-object(ng-src='{{person.img}}')
             .caption
               h5.name
-                | Minne Hayes
+                a(href="/account/otherprofile-connected" style="color:black;") {{person.name}}
               p.role
-                | Photographer
-          .span
+                {{person.role}}
         .col-xs-3.media-info
-          .thumbnail
-            img.media-object(ng-src='/assets/images/pro/thumnail2.jpg')
+          .thumbnail(ng-repeat="product in product | orderBy:random | limitTo:quantity1") 
+            img.media-object(ng-src='{{product.img}}')
             .caption
               h5.name
-                | handbag
+                {{product.name}}
               p.role
-                | byAMT
-          span.likes
+                |{{product.brand}}
+              span.likes
           p.duration
-            | 1 day ago  
+            | 1 day ago
     .clearfix
     .alert-msg
       | Sorry you can't see recent news unless other member connects with you

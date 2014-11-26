@@ -15,13 +15,13 @@ include partials/vip-top
         .form
           input(type="checkbox")
     .clearfix
-    ul.messages
-      li.media
+    ul.messages(ng-controller="accountCtrl")
+      li.media(ng-repeat="person in people | orderBy:random") 
         a.pull-left
-          img.media-object(ng-src='/assets/images/pro/brand.jpg')
+          img.media-object(ng-src='{{person.img}}')
         .media-body
           h4.col-lg-4.media-heading
-            | Kristine
+            | {{person.name}}
           ul.info.pull-right.list-inline
             li.date
               | 23 July
@@ -30,25 +30,7 @@ include partials/vip-top
                 input(type = "checkbox")
           .clearfix
           p.title
-            | Kristine
-        .btn-group
-          button.accept Accept
-          button.ignore Ignore
-      li.media
-        a.pull-left
-          img.media-object(ng-src='/assets/images/pro/editor.jpg')
-        .media-body
-          h4.col-lg-4.media-heading
-            | Kristine
-          ul.info.pull-right.list-inline
-            li.date
-              | 23 July
-            li
-              form
-                input(type = "checkbox")
-          .clearfix
-          p.title
-            | Kristine
+            | {{person.role}}
         .btn-group
           button.accept Accept
           button.ignore Ignore

@@ -85,6 +85,9 @@
   box-shadow: 0 5px 0 #dadada;
   color: #575757;
 }
+#filters .filter-button-small {
+  font-size: 9px;
+}
 #filters .colour {
   text-indent: -99999px;
   height: 23px;

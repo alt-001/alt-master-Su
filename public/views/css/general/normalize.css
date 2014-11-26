@@ -124,10 +124,13 @@ a:hover {
   margin-bottom: 20px;
   width: 60px;
 }
+.share {
+  cursor: pointer;
+}
 #zoomContainer {
   z-index: 0;
 }
-#products .modal-dialog {
+#shareModal .modal-dialog {
   width: 335px;
 }
 .zoomContainer {
@@ -172,7 +175,7 @@ a:hover {
 .zoomWindowContainer .zoomWindow {
   width: 196% !important;
   border: none !important;
-  height: 214% !important;
+  height: 210% !important;
 }
 /**
  * Correct `block` display not defined in IE 8/9.

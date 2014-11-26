@@ -2,9 +2,8 @@ include partials/account-top
 #account-love-brand(ng-controller="productsCtrl")
   ul(masonry)
     li.masonry-brick.col-xs-3.col-md-2(ng-repeat="product in products | orderBy: sort |  filter:productsFilterService.activeFilters" hover-show)
-      a(href='/product')
-        img.product-cover.img-responsive(ng-src="{{product.image}}")
+      img.product-cover.img-responsive(ng-src="{{product.image}}")
       .col-xs-12
         #brand-info
-          | {{product.designer}}
-          button.pull-right.remove unfollow
+          a(href='/brand'){{product.brand}}
+          button.pull-right.remove X

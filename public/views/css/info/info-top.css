@@ -59,3 +59,8 @@
   font-weight: 600;
   border: 0;
 }
+#info-top .navs .chat_btn:hover {
+  color: #fff;
+  background: #3c3c3c url("/assets/images/speechbubble_hover.png") 88% 6px no-repeat;
+  transition: all 0.3s ease-in-out 0s;
+}

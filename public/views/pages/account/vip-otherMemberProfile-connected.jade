@@ -2,7 +2,7 @@ include partials/vip-top
 .col-xs-3
   include partials/vip-sidebar-other-connected
 .col-xs-9
-  #vipRecentNewsContent
+  #vipRecentNewsContent(ng-controller="accountCtrl")
     .top-bar
       .col-xs-4
         form(ng-model="vipSort")
@@ -20,158 +20,40 @@ include partials/vip-top
     .updates
       .lists
         .col-xs-3.media-info
-          .thumbnail
-            img.media-object(ng-src='/assets/images/pro/designer1.jpg')
+          .thumbnail(ng-repeat="person in people | orderBy:random") 
+            img.media-object(ng-src='{{person.img}}')
             .caption
               h5.name
-                a(href="") Minne Hayes
+                a(href="/account/otherprofile-connected") {{person.name}}
               p.role
-                | Photographer
+                {{person.role}}
         .col-xs-3.media-info
-          .thumbnail
-            img.media-object(ng-src='/assets/images/pro/brand.jpg')
+          .thumbnail(ng-repeat="person in people | orderBy:random") 
+            img.media-object(ng-src='{{person.img}}')
             .caption
               h5.name
-                | Minne Hayes
+                a(href="/account/otherprofile-connected") {{person.name}}
               p.role
-                | Photographer
-          span.connection 
+                {{person.role}}
+              span.connection 
           p.duration
             | 1 day ago
         .col-xs-3.media-info
-          .thumbnail
-            img.media-object(ng-src='/assets/images/pro/desginer2.jpg')
+          .thumbnail(ng-repeat="person in people | orderBy:random") 
+            img.media-object(ng-src='{{person.img}}')
             .caption
               h5.name
-                | Minne Hayes
+                a(href="/account/otherprofile-connected") {{person.name}}
               p.role
-                | Photographer
-          .span
+                {{person.role}}
         .col-xs-3.media-info
-          .thumbnail
-            img.media-object(ng-src='/assets/images/pro/thumnail4.jpg')
+          .thumbnail(ng-repeat="product in product | orderBy:random") 
+            img.media-object(ng-src='{{product.img}}')
             .caption
               h5.name
-                | handbag
+                {{product.name}}
               p.role
-                | byAMT
-          span.likes
-          p.duration
-            | 1 day ago
-        .col-xs-3.media-info
-          .thumbnail
-            img.media-object(ng-src='/assets/images/pro/brand1.jpg')
-            .caption
-              h5.name
-                | Minne Hayes
-              p.role
-                | Photographer
-        .col-xs-3.media-info
-          .thumbnail
-            img.media-object(ng-src='/assets/images/pro/brand2.jpg')
-            .caption
-              h5.name
-                | Minne Hayes
-              p.role
-                | Photographer
-          span.connection 
-          p.duration
-            | 1 day ago
-        .col-xs-3.media-info
-          .thumbnail
-            img.media-object(ng-src='/assets/images/pro/pr expert.jpg')
-            .caption
-              h5.name
-                | Minne Hayes
-              p.role
-                | Photographer
-        .col-xs-3.media-info
-          .thumbnail
-            img.media-object(ng-src='/assets/images/pro/thumnail5.jpg')
-            .caption
-              h5.name
-                | handbag
-              p.role
-                | byAMT
-          span.likes
-          p.duration
-            | 1 day ago
-        .col-xs-3.media-info
-          .thumbnail
-            img.media-object(ng-src='/assets/images/pro/buyer.jpg')
-            .caption
-              h5.name
-                | Minne Hayes
-              p.role
-                | Photographer
-          .span
-        .col-xs-3.media-info
-          .thumbnail
-            img.media-object(ng-src='/assets/images/pro/store.jpg')
-            .caption
-              h5.name
-                | Minne Hayes
-              p.role
-                | Photographer
-          span.connection
-          p.duration
-            | 1 day ago                    
-        .col-xs-3.media-info
-          .thumbnail
-            img.media-object(ng-src='/assets/images/pro/profile_1173171134_75sq_1396544751.jpg')
-            .caption
-              h5.name
-                | Minne Hayes
-              p.role
-                | Photographer
-          .span
-        .col-xs-3.media-info
-          .thumbnail
-            img.media-object(ng-src='/assets/images/pro/thumnail2.jpg')
-            .caption
-              h5.name
-                | handbag
-              p.role
-                | byAMT
-          span.likes
-          p.duration
-            | 1 day ago
-        .col-xs-3.media-info
-          .thumbnail
-            img.media-object(ng-src='/assets/images/pro/brand1.jpg')
-            .caption
-              h5.name
-                | Minne Hayes
-              p.role
-                | Photographer
-        .col-xs-3.media-info
-          .thumbnail
-            img.media-object(ng-src='/assets/images/pro/brand2.jpg')
-            .caption
-              h5.name
-                | Minne Hayes
-              p.role
-                | Photographer
-          span.connection 
-          p.duration
-            | 1 day ago
-        .col-xs-3.media-info
-          .thumbnail
-            img.media-object(ng-src='/assets/images/pro/photographer1.jpg')
-            .caption
-              h5.name
-                | Minne Hayes
-              p.role
-                | Photographer
-          .span
-        .col-xs-3.media-info
-          .thumbnail
-            img.media-object(ng-src='/assets/images/pro/thumnail7.jpg')
-            .caption
-              h5.name
-                | handbag
-              p.role
-                | byAMT
-          span.likes
+                |{{product.brand}}
+              span.likes
           p.duration
             | 1 day ago

@@ -32,6 +32,25 @@ alt
       return currentRoute[2] === 'products' ? 'true' : 'false';
   };
 })
+.controller('lookCtrl', function($scope) {
+  $scope.look = [
+    { img: '/assets/images/brand/moment-1.jpg',
+    price:200,
+    name:'Acrylic Colorful Bubble Bracelet' },
+    { img: '/assets/images/brand/moment-2.jpg',
+    price:200,
+    name:'Burning Pattern T-shirt'  }, 
+    { img: '/assets/images/brand/moment-3.jpg',
+    price:200,
+    name:'Lady Leather Handbag'  }, 
+    { img: '/assets/images/brand/moment-4.jpg',
+    price:200,
+    name:'Snake Skin Clutch'  },        
+    { img: '/assets/images/brand/moment-5.jpg',
+    price:200,
+    name:'Dark Muse Cape'  }
+  ];
+})
 .controller('brandProductCtrl', function($scope, brandProduct) {
   $scope.products = brandProduct.query();
 })

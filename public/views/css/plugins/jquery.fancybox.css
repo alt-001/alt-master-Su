@@ -151,7 +151,7 @@
 	background: transparent url('blank.gif'); /* helps IE */
 	-webkit-tap-highlight-color: rgba(0,0,0,0);
 	z-index: 8040;
-	border: 2px solid #a8a8a8;
+	border: 3px solid black;
 	-ms-transform: rotate(45deg) /* IE 9 */
 	-webkit-transform: rotate(45deg); /* Chrome, Safari, Opera */
 	transform: rotate(45deg);
@@ -289,7 +289,12 @@
 .fancybox-title-outside-wrap {
 	position: relative;
 	margin-top: 10px;
-	color: black;
+	color: white;
+	background-color: #646464;
+	padding: 10px;
+	padding-left: 15px;
+	border-radius: 5px;
+	font-family: 'Source Sans Pro'
 }
 
 .fancybox-title-inside-wrap {

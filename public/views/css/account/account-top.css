@@ -59,6 +59,11 @@
   font-weight: 600;
   border: 0;
 }
+#account-top .navs .chat_btn:hover {
+  color: #fff;
+  background: #3c3c3c url("/assets/images/speechbubble_hover.png") 88% 6px no-repeat;
+  transition: all 0.3s ease-in-out 0s;
+}
 #account-top .lists ul {
   padding: 30px 4%;
 }
@@ -66,7 +71,8 @@
   display: inline-block;
   margin-right: 20px;
 }
-#account-top .lists ul li:first-child {
+#account-top .lists ul li:first-child,
+#account-top .lists ul li:nth-child(2) {
   padding-right: 30px;
   background: url("/assets/images/navi_dot.png") right center no-repeat;
 }

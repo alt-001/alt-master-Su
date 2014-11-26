@@ -1,3 +1,9 @@
+#account-love-brand a {
+  color: #000;
+}
+#account-love-brand a:hover {
+  text-decoration: none;
+}
 #account-love-brand #brand-info {
   width: 100%;
   position: absolute;

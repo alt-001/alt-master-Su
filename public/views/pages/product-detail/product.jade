@@ -23,10 +23,9 @@
         ul.parent.quantity
           li Quantity
             .input-append.spinner.pull-right(data-trigger="spinner")
+              a.spin-down(href="javascript:;" data-spin="down" style="margin-right:10px;") -
               input(type="text" value="1" data-rule="quantity")
-              .add-on.pull-right
-                a.spin-up(href="javascript:;" data-spin="up") +
-                a.spin-down(href="javascript:;" data-spin="down") -
+              a.spin-up(href="javascript:;" data-spin="up" style="margin-left:10px;") +
         .row
           .col-xs-6
             button.addtocart Add to Cart
@@ -47,20 +46,7 @@
             a(href='/brand') {{brandName}}
             button Follow
           .share-wrapper.pull-left
-            a.pull-left.share(href='#') Share...
-            .share-expand.pull-left
-              a(href='#')
-                img(src='/assets/images/icon-weibo.png')
-              a(href='#')
-                img(src='/assets/images/icon-weixin.png')
-              a(href='#')
-                img(src='/assets/images/icon-qzone.png')
-              a(href='#')
-                img(src='/assets/images/fb.png')
-              a(href='#')
-                img(src='/assets/images/twitter_2.png')
-              a(href='#')
-                img(src='/assets/images/email-icon.png')
+            img.pull-left.share(src='/assets/images/share_icon.png' data-toggle="modal" data-target="#shareModal" style="opacity:.3;")
         .col-xs-4.text-right
           button.chat_btn Chat Online
       .details
@@ -128,5 +114,12 @@
             a.right.carousel-control(href='#productCarousel2', role='button', data-slide='next')
               span
       .clearfix
+    include partials/share-btn
 script.
   $('.nav-tabs a:first').tab('show');
+  $(".spinner")
+  .spinner('delay', 200) //delay in ms
+  .spinner('changed', function(e, newVal, oldVal){
+  })
+  .spinner('changing', function(e, newVal, oldVal){
+  });

@@ -2,24 +2,9 @@
   .title 
     | byAMT
   .misc
-    .col-xs-4
-      .share-wrapper
-        a.share(href='#') Share...
-        .share-expand
-          a(href='#')
-            img(src='/assets/images/icon-weibo.png')
-          a(href='#')
-            img(src='/assets/images/icon-weixin.png')
-          a(href='#')
-            img(src='/assets/images/icon-qzone.png')
-          br
-          a(href='#')
-            img(src='/assets/images/fb.png')
-          a(href='#')
-            img(src='/assets/images/twitter_2.png')
-          a(href='#')
-            img(src='/assets/images/email-icon.png')
-    .col-xs-8.text-right
+    .col-xs-2.share
+      img.pull-left(src='/assets/images/share_icon.png' data-toggle="modal" data-target="#shareModal")
+    .col-xs-10.text-right
       a.follow(href='/signin') Follow
       a.message(href='' data-toggle="modal" data-target="#myModal") Message
     .clearfix
@@ -47,4 +32,5 @@
             textarea(placeholder="Type a message").col-xs-12
           .modal-footer
             button.btn.btn-default(type="button" data-dismiss="modal") Close
-            button.btn.btn-primary(type="button") Submit 
+            button.btn.btn-primary(type="button") Submit
+  include share-btn

@@ -38,7 +38,7 @@ alt
      big:'/assets/images/product-details/product5_big.jpg'
     },
     { thumb: '/assets/images/product-details/product6_small.png',
-     medium:'/assets/images/product-details/product5.jpg',
+     medium:'/assets/images/product-details/product6.jpg',
      big:'/assets/images/product-details/product5_big.jpg'
     }
   ];

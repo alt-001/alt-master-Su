@@ -31,10 +31,10 @@
     form
       - var sortOptions = [{value: "-id", text: "Most recent"}, {value: "-likeCount", text: "Most liked"}, {value: "-price", text: "Price high"}, {value: "price", text: "Price low"}, {value: "video", text: "Video"}, {value: "featured", text: "We recommend"}]
       each val in sortOptions
-        .col-xs-6
-          label.filter-button.order
+        .col-xs-3
+          label.filter-button.filter-button-small.order
             .child
-              input(ng-model="sort" type="radio" name="sort" value="#{val.value}")
+              input(style="font-size:8px;" ng-model="sort" type="radio" name="sort" value="#{val.value}")
               | #{val.text}
    .col-xs-3
     form

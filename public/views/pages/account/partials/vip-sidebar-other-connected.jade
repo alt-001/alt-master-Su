@@ -1,8 +1,8 @@
-#vipSidebar
+#vipSidebar(ng-controller="accountCtrl")
   .profile
     .info
       .col-xs-4.headshot
-        img.img-responsive(ng-src="/assets/images/pro/blogger1.jpg")
+        img.img-responsive(ng-src="/assets/images/pro/p4.jpg")
         a(href="/account/compose")
           button.other-profile Message
       .col-xs-8.details
@@ -10,7 +10,7 @@
         p.intro founder at c14 creative
         p.role Photographer
         p.connections 
-          span.count 3
+          span.count 10
           a(href="/account/otherconnections").connections Connections
     .clearfix 
     .about
@@ -21,56 +21,20 @@
       .carousel-inner
         .item.active
           ul.list-inline
-            li.col-xs-3
-              a
-                img.img-responsive(ng-src="/assets/images/pro/designer.jpg")
+            li.col-xs-3(ng-repeat="person in people | orderBy:random | limitTo:quantity4") 
+              a(href="/account/otherprofile")
+                img.img-responsive(ng-src="{{person.img}}")
               .infowrapper
-                h4.name Kristina
-                p.role Photographer
-            li.col-xs-3
-              a
-                img.img-responsive(ng-src="/assets/images/pro/designer1.jpg")
-              .infowrapper
-                h4.name Kristina
-                p.role Photographer
-            li.col-xs-3
-              a
-                img.img-responsive(ng-src="/assets/images/pro/desginer2.jpg")
-              .infowrapper
-                h4.name Kristina
-                p.role Photographer
-            li.col-xs-3
-              a
-                img.img-responsive(ng-src="/assets/images/pro/desginer4.jpg")
-              .infowrapper
-                h4.name Kristina
-                p.role Photographer
+                h4.name {{person.name}}
+                p.role {{person.role}}
         .item
           ul.list-inline
-            li.col-xs-3
-              a
-                img.img-responsive(ng-src="/assets/images/pro/editor.jpg")
+            li.col-xs-3(ng-repeat="person in people | orderBy:random | limitTo:quantity4") 
+              a(href="/account/otherprofile")
+                img.img-responsive(ng-src="{{person.img}}")
               .infowrapper
-                h4.name Kristina
-                p.role Photographer 
-            li.col-xs-3
-              a
-                img.img-responsive(ng-src="/assets/images/pro/designer1.jpg")
-              .infowrapper
-                h4.name Kristina
-                p.role Photographer
-            li.col-xs-3
-              a
-                img.img-responsive(ng-src="/assets/images/pro/model.jpg")
-              .infowrapper
-                h4.name Kristina
-                p.role Photographer
-            li.col-xs-3
-              a
-                img.img-responsive(ng-src="/assets/images/pro/photographer.jpg")
-              .infowrapper
-                h4.name Kristina
-                p.role Photographer
+                h4.name {{person.name}}
+                p.role {{person.role}}
       a.left.carousel-control(href='#carousel' role='button' data-slide='prev')
         span.glyphicon.glyphicon-chevron-left
       a.right.carousel-control(href='#carousel' role='button' data-slide='next')

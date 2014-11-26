@@ -7,41 +7,13 @@
       font-size 30px
       width 50%
       float left
-    .share-wrapper
-      float right
-      height 20px
-      margin 10px
-      margin-top 40px
-      &:hover .share-expand
-        opacity 1
-        bottom 10px
-      a
-        color black
-        &:hover
-          text-docoration none  
-      .share
-        font-size 14px
-        position relative
-        text-align right               
-      .share-expand
-        overflow hidden
-        position absolute
-        width 70px
-        height 50px
-        bottom 0px
-        opacity 0
-        transition all .2s ease-in-out
-        a
-          margin-right 6px
-          img
-            opacity 1
-            &:hover
-              opacity .8
     p
       font-size 18px
       font-weight 100
       margin-top 20px
       font-family "source sans pro" "PT Sans"
+    .share
+      margin-top 30px
   #momentWrapper
     padding 20px 60px 80px 60px
     h4
@@ -56,12 +28,41 @@
       #productCarousel1
         .carousel-inner
           padding 15px 7.5px
-          img
+          li
             margin 0 7.5px
             width calc(20% - 15px)
             cursor pointer
+            float left
+            position relative
             &:hover
               border 1px solid #c5c5c5
+            &:hover .info-wrapper
+              opacity 1
+            .info-wrapper
+              position absolute
+              width 85%
+              height 85%
+              margin auto
+              top 0
+              bottom 0
+              left 0
+              right 0
+              padding 10px
+              background rgba(0, 0, 0, .4)
+              color white
+              opacity 0
+              transition all .3s ease-in-out
+              h4
+                margin 0
+                text-align left
+                font-size 14px
+                font-weight 100
+                line-height 1.2
+              span
+                position absolute
+                bottom 10px
+                left 10px
+                font-weight 700
         .carousel-control
           -ms-transform rotate(45deg) /* IE 9 */
           -webkit-transform rotate(45deg) /* Chrome, Safari, Opera */
@@ -131,8 +132,4 @@
         a
           margin-left 12px
       .share-wrapper
-        width 260px
         float right
-        &:hover > span
-          opacity 1
-          width 180px
