@@ -16,7 +16,7 @@ alt
   return BrandInspirationResource;
 })
 .factory('searches', function($resource) {
-  var SearchesResource = $resource('/data/searches.json');  
+  var SearchesResource = $resource('/data/products.json');  
   return SearchesResource;
 })
 .factory('productsFilterGender', function($resource) {
