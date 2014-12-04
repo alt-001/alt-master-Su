@@ -64,10 +64,15 @@ alt
   ========================================================================== */
   .when('/brand', { templateUrl: '/pages/brand/brand-products-all' })
   .when('/brand/products', { templateUrl: '/pages/brand/brand-products-all' })
+  .when('/cn/brand/products', { templateUrl: '/pages/brand/brand-products-all' })
   .when('/brand/products/all', { templateUrl: '/pages/brand/brand-products-all' })
+  .when('/cn/brand/products/all', { templateUrl: '/pages/brand/brand-products-all' })
   .when('/brand/products/featured', { templateUrl: '/pages/brand/brand-products-featured' })
+  .when('/cn/brand/products/featured', { templateUrl: '/pages/brand/brand-products-featured' })
   .when('/brand/trace', { templateUrl: '/pages/brand/brand-trace' })
+  .when('/cn/brand/trace', { templateUrl: '/pages/brand/brand-trace' })
   .when('/brand/inspirations', { templateUrl: '/pages/brand/brand-Inspirations' })
+  .when('/cn/brand/inspirations', { templateUrl: '/pages/brand/brand-Inspirations' })
   .when('/brand/:chapter', { templateUrl: '/pages/brand/brand-chapter' })
   .when('/cn/brand/:chapter', { templateUrl: '/pages/brand/brand-chapter' });
 });

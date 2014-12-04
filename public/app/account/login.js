@@ -6,6 +6,7 @@ alt.controller('loginCtrl', function($scope, $http, $location, $route, $window, 
     altAuth.authenticateUser(username, password).then(function(success) {
       if(success) {
         toaster.pop('success', 'Successfully signed in!');
+        $window.location.reload();
       } else {
         toaster.pop('error', 'Username/Password combination incorrect.');
       }

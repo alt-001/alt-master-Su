@@ -39,7 +39,7 @@ alt
       $scope.sort = '-gender';
     }
   } else {
-    $scope.sort = '-id';
+    $scope.sort = 'id';
   }
   
   

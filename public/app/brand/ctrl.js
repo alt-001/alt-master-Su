@@ -24,25 +24,28 @@ alt
     { name: 'trace', url: '/brand/trace' }
   ];
   $scope.cnchapters = [
-    { name: '单品', 
+    { name: '单品',
+      id:'products',
       url: '/cn/brand/products/all',
       class: 'product-active',
       sub: [
         {
+          id:'all',
           name: '所有',
           url: '/cn/brand/products/all'
         },
         {
+          id:'featured',
           name: '推荐',
           url: '/cn/brand/products/featured'
         }
       ]
     },
-    { name: '时刻', url: '/cn/brand/moment' },
-    { name: '故事', url: '/cn/brand/story' },
-    { name: '对话', url: '/cn/brand/talk' },
-    { name: '灵感', url: '/cn/brand/inspirations' },
-    { name: '回溯', url: '/cn/brand/trace' }
+    { name: '时刻', id:'moment', url: '/cn/brand/moment' },
+    { name: '故事', id:'story', url: '/cn/brand/story' },
+    { name: '对话', id:'talk', url: '/cn/brand/talk' },
+    { name: '灵感', id:'inspirations', url: '/cn/brand/inspirations' },
+    { name: '回溯', id:'trace', url: '/cn/brand/trace' }
   ];
   $scope.lang = function () {
     var currentRoute = $location.path().split('/');
@@ -53,9 +56,17 @@ alt
       var currentRoute = $location.path().split('/');
       return chapter === currentRoute[2] ? 'active' : '';
   };
+  $scope.navClasscn = function (chapter) {
+      var currentRoute = $location.path().split('/');
+      return chapter === currentRoute[3] ? 'active' : '';
+  };
    $scope.isProduct = function () {
       var currentRoute = $location.path().split('/');
       return currentRoute[2] === 'products' ? 'true' : 'false';
+  };
+   $scope.isProductcn = function () {
+      var currentRoute = $location.path().split('/');
+      return currentRoute[3] === 'products' ? 'true' : 'false';
   };
 })
 .controller('lookCtrl', function($scope) {
