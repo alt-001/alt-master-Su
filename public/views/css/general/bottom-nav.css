@@ -12,6 +12,9 @@
   margin-top: 2px;
   height: 40px;
 }
+#bottom-nav span.login a {
+  background-image: none;
+}
 #bottom-nav span a {
   color: #a0a0a0;
   font: 700 25px/1.2 'PT Sans';
@@ -26,6 +29,10 @@
 }
 #bottom-nav span a:hover {
   transition: all 0.8s ease;
+  color: #fff;
+}
+#bottom-nav span a i {
+  margin-left: 5px;
   color: #fff;
 }
 #bottom-nav span:first-child a,

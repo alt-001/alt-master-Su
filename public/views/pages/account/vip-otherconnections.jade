@@ -1,4 +1,4 @@
-include partials/vip-top
+include partials/account-top
 .col-xs-3
   include partials/vip-sidebar-other-connected
 .col-xs-9
@@ -13,13 +13,13 @@ include partials/vip-top
             button(type="submit").addon.col-xs-2
               span.glyphicon.glyphicon-search
     .connections(ng-controller="accountCtrl")
-      .col-xs-4(ng-repeat="person in people | orderBy:random" style="margin-bottom:40px;") 
+      .col-xs-4(ng-repeat="person in rankedList | orderBy:'rank'" style="margin-bottom:40px;") 
         .media
           a.pull-left(href='#')
-            img.media-object(ng-src='{{person.img}}')
+            img.media-object(ng-src='{{person.item.img}}')
           .media-body
-            h4.media-heading {{person.name}}
-            | {{person.role}}
+            h4.media-heading {{person.item.name}}
+            | {{person.item.role}}
     .clearfix
     ul.pager
       li.previous.disabled

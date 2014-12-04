@@ -3,48 +3,57 @@
     .text 
       | filter
   .col-xs-1
-    form(ng-controller="filterCtrl")
+    form
       - var filterGenderOptions = [{value: "x", text: "Man"}, {value: "y", text: "Woman"}]
       each val in filterGenderOptions
         label.filter-button.gender
           .child
-            input(ng-model="filterService.activeFilters.gender" type="radio" name="filter" value="#{val.value}" )
+            input(ng-model="productsFilterService.activeFilters.gender" type="radio" name="filter" value="#{val.value}" )
             | #{val.text}
-   .col-xs-3
-    form(ng-controller="filterCtrl")
-     - var filterTypeOptions = [{value: "shoe", text: "Shoes"}, {value: "accessory", text: "Accessories"}, {value: "bag", text: "Bags"}, {value: "jewelly", text: "Jewelly"}, {value: "appeal", text: "Appeal"}, {value: "misc", text: "Other misc"}]
+  .col-xs-3
+    form
+      - var filterTypeOptions = [{value: "footwear", text: "Shoes"}, {value: "accessories", text: "Accessories"}, {value: "bag", text: "Bags"}, {value: "jewellery", text: "Jewellery"}, {value: "apparel", text: "Apparel"}, {value: "misc", text: "Other misc"}]
       each val in filterTypeOptions
-        .col-xs-6
+        .col-xs-12.col-sm-12.col-md-6.col-lg-6
           label.filter-button.type
             .child
-              input(ng-model="filterService.activeFilters.type" type="radio" name="filter" value="#{val.value}")
+              input(ng-model="productsFilterService.activeFilters.maincat" type="radio" name="filter" value="#{val.value}")
               | #{val.text}
-   .col-xs-2
-    form(ng-controller="filterCtrl")
+  .col-xs-2
+    form
       - var filterColourOptions = [{value: "blue", text: "#01D4FF"}, {value: "red", text: "#F9C5E3"}, {value: "black", text: "#000"}, {value: "green", text: "#AEF5B0"}, {value: "red", text: "#FAB6B6"}, {value: "blue", text: "#DADADA"}, {value: "black", text: "#FAE4AD"}, {value: "green", text: "#ADCCFA"}, {value: "blue", text: "#D8CAB8"}]
       each val in filterColourOptions
-        .col-xs-4
+        .col-xs-12.col-sm-12.col-md-4.col-lg-4
           label.colour(style="background-color: #{val.text}")
-            input(ng-model="filterService.activeFilters.color" type="radio" name="filter" value="#{val.value}")
+            input(ng-model="productsFilterService.activeFilters.color" type="radio" name="filter" value="#{val.value}")
             | #{val.text}
-   .col-xs-3
+  .col-xs-3
+    form(ng-show="productsFilterService.activeFilters.maincat == 'footwear' || productsFilterService.activeFilters.maincat == undefined")
+      - var filterSubOptions = [{value: "02", text: "02"}, {value: "03", text: "03"}, {value: "05", text: "05"}]
+        each val in filterSubOptions
+          .col-xs-12.col-sm-12.col-md-4.col-lg-4
+            label.filter-button.subcat
+              .child
+                input(ng-model="filtertype.#{val.value}" type="checkbox" value="#{val.value}")
+                | #{val.text}
+    form(ng-show="productsFilterService.activeFilters.maincat == 'accessories'")
+      - var filterSubOptions = [{value: "01", text: "01"}, {value: "05", text: "05"}, {value: "06", text: "06"}]
+        each val in filterSubOptions
+          .col-xs-12.col-sm-12.col-md-6.col-lg-6
+            label.filter-button.subcat
+              .child
+                input(ng-model="filtertype.#{val.value}" type="checkbox" value="#{val.value}"  ng-checked="true")
+                | #{val.text}
+  .col-xs-3
     form
       - var sortOptions = [{value: "-id", text: "Most recent"}, {value: "-likeCount", text: "Most liked"}, {value: "-price", text: "Price high"}, {value: "price", text: "Price low"}, {value: "video", text: "Video"}, {value: "featured", text: "We recommend"}]
       each val in sortOptions
-        .col-xs-3
-          label.filter-button.filter-button-small.order
-            .child
-              input(style="font-size:8px;" ng-model="sort" type="radio" name="sort" value="#{val.value}")
-              | #{val.text}
-   .col-xs-3
-    form
-      - var sortOptions = [{value: "-id", text: "Most recent"}, {value: "-likeCount", text: "Most liked"}, {value: "-price", text: "Price high"}, {value: "price", text: "Price low"}, {value: "video", text: "Video"}, {value: "featured", text: "We recommend"}]
-      each val in sortOptions
-        .col-xs-6
+        .col-xs-12.col-sm-12.col-md-6.col-lg-6
           label.filter-button.order
             .child
               input(ng-model="sort" type="radio" name="sort" value="#{val.value}")
               | #{val.text}
+
 script.
   $('.filter-button.gender').click(function() {
     $('.filter-button.gender').removeClass('active');
@@ -53,6 +62,15 @@ script.
   $('.filter-button.type').click(function() {
     $('.filter-button.type').removeClass('active');
     $(this).addClass('active');
+  });
+  $('.filter-button.subcat').click(function() {
+    var isActive = $('input', this).is(':checked');
+    console.log(isActive);
+    if(isActive) {
+      $(this).addClass('active');
+    } else {
+      $(this).removeClass('active');
+    }
   });
   $('.colour').click(function() {
     $('.colour').removeClass('active');

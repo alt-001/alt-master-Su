@@ -1,5 +1,5 @@
 alt
-.controller('accountCtrl', function($scope, cartService, $location) {
+.controller('accountCtrl', function($scope, cartService, $location, $window) {
   $scope.carts = cartService.query();
   $scope.isLove = function () {
     var currentRoute = $location.path().split('/');
@@ -91,7 +91,18 @@ alt
     name:'Black R&R Backpack',
     brand:'Meli Melo'}
   ];
-  $scope.random = function() {
-    return 0.5 - Math.random();
-  }
+    $scope.rankedList = [];
+        angular.forEach($scope.people, function(item) {
+            $scope.rankedList.push({
+            item: item,
+            rank: 0.5 - $window.Math.random()
+        });
+    });
+    $scope.rankedList2 = [];
+        angular.forEach($scope.people, function(item) {
+            $scope.rankedList2.push({
+            item: item,
+            rank: 0.5 - $window.Math.random()
+        });
+    });
 });

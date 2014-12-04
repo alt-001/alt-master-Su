@@ -120,4 +120,65 @@ alt
       }
     );
   };
+}).filter('bycolor', function () {
+    return function (products, colors) {
+      
+      if (colors != undefined) {
+        if (colors.length != 0 ) {
+          var colorRefs = _.object(_.map(colors, function(x){return [x.color, x.value]}));
+          var items = {
+              colors: colorRefs,
+              out: []
+          };
+        } else {
+          var items = {
+            colors: undefined,
+            out: []
+          };
+        }
+      } else {
+        var items = {
+            colors: undefined,
+            out: []
+        };
+      }
+      
+      angular.forEach(products, function (value, key) {
+          if (this.colors === undefined) {
+              this.out.push(value);
+          } else {
+              if (this.colors[value.color] === true) {
+                  this.out.push(value);
+              } 
+          }
+      }, items);
+      return items.out;
+    };
+})
+.filter('filtertype', function () {
+    return function (products, types) {
+      
+      var hasAll = _.has(types, "all");
+      if(!hasAll) {
+        var items = {
+            types: types,
+            out: []
+        };
+      } else {
+        var items = {
+            types: {"bag":true,"jewelly":true,"accessory":true,"shoe":true},
+            out: []
+        };
+      }
+        angular.forEach(products, function (value, key) {
+            if (this.types === undefined) {
+                this.out.push(value);
+            } else {
+                if (this.types[value.type] === true) {
+                    this.out.push(value);
+                } 
+            }
+        }, items);
+        return items.out;
+    };
 });

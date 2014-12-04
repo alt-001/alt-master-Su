@@ -1,8 +1,12 @@
-var alt = angular.module('alt', ['ngResource', 'ngRoute', 'wu.masonry']);
+var alt = angular.module('alt', ['ngResource', 'ngRoute', 'toaster', 'restangular', 'wu.masonry', 'ngProgress']);
 
 alt
-.config(function($routeProvider, $locationProvider) {
-  $locationProvider.html5Mode(true);
+.config(function($routeProvider, $locationProvider, RestangularProvider) {
+  $locationProvider.html5Mode({
+    enabled: true,
+    requireBase: false
+  });
+  RestangularProvider.setBaseUrl('/data');
   $routeProvider
 
   .when('/', { templateUrl: '/pages/index' })

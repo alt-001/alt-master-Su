@@ -16,10 +16,6 @@ alt
   }
   $scope.criteria = $location.search().target;
 })
-.controller('productsCtrl', function($scope, products, productsFilterService) {
-  $scope.products = products.query();
-  $scope.productsFilterService = productsFilterService; 
-})
 .controller('productsHomeCtrl', function($scope, productsHome) {
   $scope.productsHome = productsHome.query(); 
 })
@@ -28,24 +24,53 @@ alt
     $scope.minRating = 0;
     $scope.maxRating = 50;
 })
-.controller('filterCtrl', function($scope, productsFilterGender, productsFilterType, productsFilterColor, productsFilterService) { 
-    $scope.productsFilterService = productsFilterService;
-    $scope.genders = productsFilterGender.query();
-    $scope.types = productsFilterType.query();
-    $scope.colors = productsFilterColor.query();
-    /*
-    $scope.selected = $scope.genders[0].value;
-    console.log($scope.selected);
-
-    $scope.select= function(value) {
-       console.log(value);
-       $scope.selected = value; 
-    };
-
-    $scope.itemClass = function(value) {
-        return value === $scope.selected ? 'active' : undefined;
-    };*/
-})
 .controller('sortCtrl', function($scope, productsSort) {
     $scope.sorts = productsSort.query();
+})
+alt
+.controller('productsCtrl', function($scope, $window, altIdentity, altAuth, Restangular, ngProgress, toaster, productsFilterService) {
+
+  $scope.productsFilterService = productsFilterService;
+  console.log($scope.productsFilterService);
+
+  $scope.identity = altIdentity;
+  
+  /*ngProgress.start();*/
+  Restangular.all('products.json').getList().then(function(response) {
+    $scope.products = response;
+    /*ngProgress.complete();*/
+  });
+  var filter = {"accessory":true,"shoe":true,"bag":true,"jewelly":true};
+  $scope.typereset = function() {
+    console.log(filter);
+    $scope.filter = {"accessory":true,"shoe":true,"bag":true,"jewelly":true};
+    $window.location.reload();
+  }
+  $scope.like = function(productColour) {
+    console.log(productColour);
+
+    var newUserData = {
+      bycolor: [{'color': productColour, 'value': true}]
+    }
+
+    altAuth.updateCurrentUser(newUserData).then(function() {
+      toaster.pop('success', 'Successfully saved!');
+    }, function(reason) {
+      toaster.pop('error', reason);
+    })
+  };
+  $scope.reset = function(productColour) {
+    console.log(productColour);
+
+    var newUserData = {
+      bycolor: []
+    }
+
+    altAuth.updateCurrentUser(newUserData).then(function() {
+      toaster.pop('success', 'Successfully reset!');
+    }, function(reason) {
+      toaster.pop('error', reason);
+    })
+  };
+
 });

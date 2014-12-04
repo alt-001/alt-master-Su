@@ -59,7 +59,11 @@ html(ng-app="alt")
     //- explore
     link(rel='stylesheet' href='/views/css/general/explore.css')
 
+    link(rel="stylesheet" href="/vendor/angularjs-toaster/toaster.css")
+
     body
+      include currentUser
+      toaster-container(toaster-options="{'time-out': 3000, 'close-button':true}")
       header
         include navs/top-nav
       section#main

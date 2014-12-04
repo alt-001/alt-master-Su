@@ -21,20 +21,20 @@
       .carousel-inner
         .item.active
           ul.list-inline
-            li.col-xs-3(ng-repeat="person in people | orderBy:random | limitTo:quantity4") 
+            li.col-xs-3(ng-repeat="person in rankedList | orderBy:'rank' | limitTo:quantity4") 
               a(href="/account/otherprofile")
-                img.img-responsive(ng-src="{{person.img}}")
+                img.img-responsive(ng-src="{{person.item.img}}")
               .infowrapper
-                h4.name {{person.name}}
-                p.role {{person.role}}
+                h4.name {{person.item.name}}
+                p.role {{person.item.role}}
         .item
           ul.list-inline
-            li.col-xs-3(ng-repeat="person in people | orderBy:random | limitTo:quantity4") 
+            li.col-xs-3(ng-repeat="person in rankedList2 | orderBy:'rank' | limitTo:quantity4") 
               a(href="/account/otherprofile")
-                img.img-responsive(ng-src="{{person.img}}")
+                img.img-responsive(ng-src="{{person.item.img}}")
               .infowrapper
-                h4.name {{person.name}}
-                p.role {{person.role}}
+                h4.name {{person.item.name}}
+                p.role {{person.item.role}}
       a.left.carousel-control(href='#carousel' role='button' data-slide='prev')
         span.glyphicon.glyphicon-chevron-left
       a.right.carousel-control(href='#carousel' role='button' data-slide='next')

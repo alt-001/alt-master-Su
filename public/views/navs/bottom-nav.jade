@@ -1,16 +1,23 @@
-#bottom-nav
+#bottom-nav(ng-controller="loginCtrl")
   #goup
   .menu
-    .menu-block.hidden-xs.hidden-sm.col-md-4.col-lg-4
+    .menu-block.col-xs-4
       span.explore
         a(href='/explore') explore
       span.search
         a(href='/search') search
       span.showroom
         a(href='/showroom') showroom
-    .menu-block.hidden-xs.hidden-sm.col-md-4.col-lg-4.text-center
-      span.signin
-        a(href='/account/love-products') sign in    
+    .menu-block.col-xs-4.text-center
+      span.signin(ng-show="!identity.isAuthenticated()")
+        a(href="/signup") Sign In
+      span.login(ng-show="identity.isAuthenticated()")
+        a(href="#") {{identity.currentUser.firstName + " " + identity.currentUser.lastName}}
+      span.mycart(ng-show="identity.isAuthenticated()")
+        a(href="/account/cart") my cart
+          i 2
+      span.signout(ng-show="identity.isAuthenticated()")
+        a(href="#", ng-click="signout()") Log Out
     .menu-block.hidden-xs.hidden-sm.col-md-4.col-lg-4.text-right
       span.follow(follow)
         a(href='#' target="_self") follow

@@ -1,4 +1,4 @@
-include partials/vip-top
+include partials/account-top
 .col-xs-3
   include partials/vip-sidebar
 .col-xs-9
@@ -23,34 +23,34 @@ include partials/vip-top
     .updates
       .lists
         .col-xs-3.media-info
-          .thumbnail(ng-repeat="person in people | orderBy:random") 
-            img.media-object(ng-src='{{person.img}}')
+          .thumbnail(ng-repeat="person in rankedList") 
+            img.media-object(ng-src='{{person.item.img}}')
             .caption
               h5.name
-                a(href="/account/otherprofile-connected") {{person.name}}
+                a(href="/account/otherprofile-connected") {{person.item.name}}
               p.role
-                {{person.role}}
+                {{person.item.role}}
         .col-xs-3.media-info
-          .thumbnail(ng-repeat="person in people | orderBy:random") 
-            img.media-object(ng-src='{{person.img}}')
+          .thumbnail(ng-repeat="person in rankedList | orderBy:'rank'") 
+            img.media-object(ng-src='{{person.item.img}}')
             .caption
               h5.name
-                a(href="/account/otherprofile-connected") {{person.name}}
+                a(href="/account/otherprofile-connected") {{person.item.name}}
               p.role
-                {{person.role}}
+                {{person.item.role}}
               span.connection 
           p.duration
             | 1 day ago
         .col-xs-3.media-info
-          .thumbnail(ng-repeat="person in people | orderBy:random") 
-            img.media-object(ng-src='{{person.img}}')
+          .thumbnail(ng-repeat="person in rankedList2 | orderBy:'rank'") 
+            img.media-object(ng-src='{{person.item.img}}')
             .caption
               h5.name
-                a(href="/account/otherprofile-connected") {{person.name}}
+                a(href="/account/otherprofile-connected") {{person.item.name}}
               p.role
-                {{person.role}}
+                {{person.item.role}}
         .col-xs-3.media-info
-          .thumbnail(ng-repeat="product in product | orderBy:random") 
+          .thumbnail(ng-repeat="product in product | orderBy:'rank'") 
             img.media-object(ng-src='{{product.img}}')
             .caption
               h5.name

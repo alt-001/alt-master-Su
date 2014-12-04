@@ -1,5 +1,5 @@
 include partials/account-top
-#products(ng-controller="productsCtrl")
+#products(ng-controller="productsCtrl" style="margin-top:60px;")
   ul(masonry)
     li.masonry-brick.col-xs-3(ng-repeat="product in products | orderBy: sort |  filter:productsFilterService.activeFilters" hover-show)
       a(href='/product')

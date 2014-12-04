@@ -47,7 +47,8 @@
   width: 75px;
   cursor: point;
 }
-#filters input[type="radio"] {
+#filters input[type="radio"],
+#filters input[type="checkbox"] {
   display: none;
 }
 #filters .filter-button {
@@ -69,14 +70,34 @@
 #filters .filter-button.gender {
   height: 65px;
   margin-bottom: 11px;
-  min-width: 85%;
-  width: calc(100% - 30px);
+  width: 75%;
 }
-#filters .filter-button.type,
+#filters .filter-button.type {
+  height: 40px;
+  width: 84%;
+  position: relative;
+  margin: auto;
+  margin-bottom: 11px;
+  left: 0;
+  right: 0;
+}
 #filters .filter-button.order {
   height: 40px;
-  margin: 0 0 11px 15px;
-  width: 82%;
+  width: 84%;
+  position: relative;
+  margin: auto;
+  margin-bottom: 11px;
+  left: 0;
+  right: 0;
+}
+#filters .filter-button.subcat {
+  height: 40px;
+  width: 77%;
+  position: relative;
+  margin: auto;
+  margin-bottom: 11px;
+  left: 0;
+  right: 0;
 }
 #filters .filter-button:hover,
 #filters .filter-button.active {
