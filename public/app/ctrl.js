@@ -27,30 +27,42 @@ alt
 .controller('sortCtrl', function($scope, productsSort) {
     $scope.sorts = productsSort.query();
 })
-alt
 .controller('productsCtrl', function($scope, $window, altIdentity, altAuth, Restangular, ngProgress, toaster, productsFilterService) {
 
   $scope.productsFilterService = productsFilterService;
-  console.log($scope.productsFilterService);
 
   $scope.identity = altIdentity;
+  if ($scope.identity.currentUser != undefined) {
+    if ($scope.identity.currentUser.gender == 'x') {
+      $scope.sort = 'gender';
+    } else {
+      $scope.sort = '-gender';
+    }
+  } else {
+    $scope.sort = '-id';
+  }
+  
   
   /*ngProgress.start();*/
   Restangular.all('products.json').getList().then(function(response) {
-    $scope.products = response;
+    if ($scope.identity.currentUser == undefined) {
+      $scope.products = response;
+    } else {
+      $scope.likeId = $scope.identity.currentUser.bycolor['0'].likeId;
+      $scope.likeColor = $scope.identity.currentUser.bycolor['0'].likeColor;
+      console.log($scope.likeId);
+      console.log($scope.likeColor);
+      $scope.likeColorProducts = _.where(response, {color: $scope.likeColor});
+      $scope.products = _.reject(response, {color: $scope.likeColor});
+      $scope.likeProducts =  _.where(response, {id: $scope.likeId});
+    }
     /*ngProgress.complete();*/
   });
-  var filter = {"accessory":true,"shoe":true,"bag":true,"jewelly":true};
-  $scope.typereset = function() {
-    console.log(filter);
-    $scope.filter = {"accessory":true,"shoe":true,"bag":true,"jewelly":true};
-    $window.location.reload();
-  }
-  $scope.like = function(productColour) {
-    console.log(productColour);
+  
+  $scope.like = function(productId, productColor) {
 
     var newUserData = {
-      bycolor: [{'color': productColour, 'value': true}]
+      bycolor: [{'likeId': productId, 'likeColor': productColor}]
     }
 
     altAuth.updateCurrentUser(newUserData).then(function() {
@@ -60,8 +72,6 @@ alt
     })
   };
   $scope.reset = function(productColour) {
-    console.log(productColour);
-
     var newUserData = {
       bycolor: []
     }

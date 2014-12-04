@@ -6,11 +6,12 @@
   z-index: 1000;
   background-color: #000;
   box-shadow: 0 -5px 0 rgba(255,255,255,0.18);
+  height: 40px;
+  overflow: hidden;
 }
 #bottom-nav span {
   display: inline-block;
   margin-top: 2px;
-  height: 40px;
 }
 #bottom-nav span.login a {
   background-image: none;

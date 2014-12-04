@@ -1,7 +1,32 @@
 #products(ng-controller="productsCtrl")
   include filter
   ul(masonry)
-    li.masonry-brick.col-xs-3(ng-repeat="product in products | orderBy: sort | filter:productsFilterService.activeFilters | filtertype: filtertype | filter:{gender: identity.currentUser.gender} | bycolor: identity.currentUser.bycolor" hover-show)
+    li.masonry-brick.col-xs-3(ng-repeat="product in likeColorProducts | orderBy: sort" hover-show)
+      a(href='/product')
+        img.product-cover.img-responsive(ng-src="{{product.image}}")
+      .tag
+        .col-xs-3.col-sm-3.col-md-3.col-lg-3
+          .tag-trigger
+            img(src='/assets/images/tag.png')
+          .clearfix
+        .shadow.col-xs-9.col-sm-9.col-md-9.col-lg-9
+          .tag-info
+            .col-xs-9.col-sm-9.col-md-9.col-lg-9
+              a(href='/product')
+               | {{product.name}}
+            .col-xs-3.col-sm-3.col-md-3.col-lg-3.text-right   
+               | {{product.price | currency: "£"}}
+            .col-xs-12.col-sm-12.col-md-12.col-lg-12
+              p from 
+                a(href='/brand/chapter/story')
+                 | {{product.brand}}
+            .col-xs-6.col-sm-6.col-md-6.col-lg-6
+              button.small-button Add to Cart
+            .col-xs-6.col-sm-6.col-md-6.col-lg-6.text-right
+              img.love(src='/assets/images/lovely_icon.png' ng-click="like(product.id, product.color)")
+              img.share(src='/assets/images/share_icon.png' data-toggle="modal" data-target="#shareModal")
+            .clearfix
+    li.masonry-brick.col-xs-3(ng-repeat="product in products | orderBy: sort | filtertype: filtertype | filter:productsFilterService.activeFilters " hover-show)
       a(href='/product')
         img.product-cover.img-responsive(ng-src="{{product.image}}")
       .tag
@@ -19,10 +44,13 @@
             .col-xs-12.col-sm-12.col-md-12.col-lg-12
               p from 
                 a(href='/brand/products/all')
-                 | {{product.designer}}
+                 | {{product.brand}}
             .col-xs-6.col-sm-6.col-md-6.col-lg-6
               button.small-button Add to Cart
             .col-xs-6.col-sm-6.col-md-6.col-lg-6.text-right
-              img.love(src='/assets/images/lovely_icon.png' ng-click="like(product.color)")
-              img.share(src='/assets/images/share_icon.png')
+              img.love(src='/assets/images/lovely_icon.png' ng-click="like(product.id, product.color)" ng-show="identity.isAuthenticated()")
+              a(href="/signup" ng-show="!identity.isAuthenticated()")
+                img.love(src='/assets/images/lovely_icon.png')
+              img.share(src='/assets/images/share_icon.png' data-toggle="modal" data-target="#shareModal")
             .clearfix
+  include share-btn

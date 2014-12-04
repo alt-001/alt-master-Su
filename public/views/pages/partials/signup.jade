@@ -1,7 +1,7 @@
 .signup-wrapper(ng-controller="loginCtrl" ng-hide='identity.isAuthenticated()')  
   #signup
     form
-      .title SIGN UP
+      .title LOG IN
       .divider.with
       input.email(placeholder='EMAIL' required='required' ng-model='username')
       input.password(type='password' placeholder='PASSWORD' required='required' ng-model='password')
@@ -17,8 +17,8 @@
       a(href='#')
         img(src='/assets/images/signup_pinterest.png')
     p
-      | Already a member? Sign in 
-      a here
+      | Not a member? Sign up 
+      a(href="/signup") here
       | .
     button.close
     .shadow

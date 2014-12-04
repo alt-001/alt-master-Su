@@ -1,5 +1,5 @@
 #signin-sidebar.col-xs-4
-  .login
+  .login(ng-controller="loginCtrl") 
     div.login-title.row
       .col-xs-6
         .title LOG IN
@@ -7,16 +7,18 @@
         .forget Forgot password ?
     .clearfix
     div.row
-      input.email.col-xs-12(name='email' type='email' placeholder='EMAIL' required='required')
-      span.email-style
-      input.password.col-xs-12(name='password' type='password' placeholder='PASSWORD' required='required')
-      span.password-style
-      .col-xs-6
-        input.submit(type='submit' value="Go")
-      .col-xs-6
-        label.pull-right
-          input.password(name='remember' type='checkbox')
-          | Remember password
+      form
+        input.email.col-xs-12(placeholder='EMAIL' required='required' ng-model='username')
+        span.email-style
+        input.password.col-xs-12(type='password' placeholder='PASSWORD' required='required' ng-model='password')
+        span.password-style
+        .col-xs-6
+          a(href="/")
+            button.submit(ng-click='signin(username, password)') GO
+        .col-xs-6
+          label.pull-right
+            input.password(name='remember' type='checkbox')
+            | Remember password
   .signup
     div
       .title JOIN THE COMMUNITY

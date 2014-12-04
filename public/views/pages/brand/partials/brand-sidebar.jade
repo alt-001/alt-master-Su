@@ -1,23 +1,44 @@
-#brand-sidebar
-  .title 
-    | byAMT
-  .misc
-    .col-xs-2.share
-      img.pull-left(src='/assets/images/share_icon.png' data-toggle="modal" data-target="#shareModal")
-    .col-xs-10.text-right
-      a.follow(href='/signup') Follow
-      a.message(href='' data-toggle="modal" data-target="#myModal") Message
-    .clearfix
-  .brand-info
-    | New York-based design studio byAMT creates jewelry, home goods, and furniture that tweak expectations and invite.
-  .brand-menu(ng-controller="brandChapterCtrl")
-    .col-xs-12.text-right
-      ul
-        li(ng-repeat="chapter in chapters" ng-class="navClass('{{chapter.name}}')")
-          a(href='{{chapter.url}}' style="text-transform: capitalize") {{chapter.name}}
-          ul#productExpand(ng-show="isProduct()")
-            li(ng-repeat="sub in chapter.sub" ng-class="navClass('{{sub.name}}')")
-              a(href='{{sub.url}}' style="text-transform: capitalize") {{sub.name}}
+#brand-sidebar(ng-controller="brandChapterCtrl")
+  div(ng-show="lang()")
+    .title 
+      | byAMT
+    .misc
+      .col-xs-2.share
+        img.pull-left(src='/assets/images/share_icon.png' data-toggle="modal" data-target="#shareModal")
+      .col-xs-10.text-right
+        a.follow(href='/signup') Follow
+        a.message(href='' data-toggle="modal" data-target="#myModal") Message
+      .clearfix
+    .brand-info
+      | New York-based design studio byAMT creates jewelry, home goods, and furniture that tweak expectations and invite.
+    .brand-menu
+      .col-xs-12.text-right
+        ul
+          li(ng-repeat="chapter in chapters" ng-class="navClass('{{chapter.name}}')")
+            a(href='{{chapter.url}}' style="text-transform: capitalize") {{chapter.name}}
+            ul#productExpand(ng-show="isProduct()")
+              li(ng-repeat="sub in chapter.sub" ng-class="navClass('{{sub.name}}')")
+                a(href='{{sub.url}}' style="text-transform: capitalize") {{sub.name}}
+  div(ng-hide="lang()")
+    .title 
+      | byAMT
+    .misc
+      .col-xs-2.share
+        img.pull-left(src='/assets/images/share_icon.png' data-toggle="modal" data-target="#shareModal")
+      .col-xs-10.text-right
+        a.follow(href='/signup') 关注
+        a.message(href='' data-toggle="modal" data-target="#myModal") Message
+      .clearfix
+    .brand-info
+      眩眼一縷的光明，草繩上插的香條，是陸地或溪橋的意志，來來！怕大家都記不起了，我們處在這樣環境，他倆感到有一種，兄弟們！別地方是什麼樣子，已經準備下，未嘗有人敢自看輕，我們是在空地上，一寸光陰一寸金，他們偏不採用，只有前進，孩子們回答著，
+    .brand-menu
+      .col-xs-12.text-right
+        ul
+          li(ng-repeat="chapter in cnchapters" ng-class="navClass('{{chapter.name}}')")
+            a(href='{{chapter.url}}' style="text-transform: capitalize") {{chapter.name}}
+            ul#productExpand(ng-show="isProduct()")
+              li(ng-repeat="sub in cnchapter.sub" ng-class="navClass('{{sub.name}}')")
+                a(href='{{sub.url}}' style="text-transform: capitalize") {{sub.name}}
   #myModal.modal.fade(tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true")
       .modal-dialog
         .modal-content
@@ -25,12 +46,12 @@
             button.close(type="button" data-dismiss="modal")
               span(aria-hidden="true") &times;
               span.sr-only Close
-            h4#myModalLabel.modal-title Send a lovely message
+            h4#myModalLabel.modal-title 发一封lovely的信息给他
           .modal-body
             input(type="text" placeholder="To").col-xs-12
             input(type="text" placeholder="Enter a subject").col-xs-12
             textarea(placeholder="Type a message").col-xs-12
           .modal-footer
-            button.btn.btn-default(type="button" data-dismiss="modal") Close
-            button.btn.btn-primary(type="button") Submit
+            button.btn.btn-default(type="button" data-dismiss="modal") 还是算了
+            button.btn.btn-primary(type="button") 发送
   include share-btn

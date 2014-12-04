@@ -28,21 +28,29 @@
             input(ng-model="productsFilterService.activeFilters.color" type="radio" name="filter" value="#{val.value}")
             | #{val.text}
   .col-xs-3
-    form(ng-show="productsFilterService.activeFilters.maincat == 'footwear' || productsFilterService.activeFilters.maincat == undefined")
-      - var filterSubOptions = [{value: "02", text: "02"}, {value: "03", text: "03"}, {value: "05", text: "05"}]
+    form(ng-show="productsFilterService.activeFilters.gender == 'x' && productsFilterService.activeFilters.maincat == 'footwear' || productsFilterService.activeFilters.maincat == undefined")
+      - var filterSubOptions = [{value: "sneaker", text: "Sneaker"}, {value: "laced", text: "Laced"}, {value: "boat", text: "Boat"}]
         each val in filterSubOptions
           .col-xs-12.col-sm-12.col-md-4.col-lg-4
             label.filter-button.subcat
               .child
                 input(ng-model="filtertype.#{val.value}" type="checkbox" value="#{val.value}")
                 | #{val.text}
-    form(ng-show="productsFilterService.activeFilters.maincat == 'accessories'")
-      - var filterSubOptions = [{value: "01", text: "01"}, {value: "05", text: "05"}, {value: "06", text: "06"}]
+    form(ng-show="productsFilterService.activeFilters.gender == 'y' && productsFilterService.activeFilters.maincat == 'footwear'")
+      - var filterSubOptions = [{value: "highheel", text: "high heel"}, {value: "lowheel", text: "low heel"}, {value: "flat", text: "flat"}]
         each val in filterSubOptions
-          .col-xs-12.col-sm-12.col-md-6.col-lg-6
+          .col-xs-12.col-sm-12.col-md-4.col-lg-4
             label.filter-button.subcat
               .child
-                input(ng-model="filtertype.#{val.value}" type="checkbox" value="#{val.value}"  ng-checked="true")
+                input(ng-model="filtertype.#{val.value}" type="checkbox" value="#{val.value}")
+                | #{val.text}
+    form(ng-show="productsFilterService.activeFilters.gender == 'y' && productsFilterService.activeFilters.maincat == 'bag'")
+      - var filterSubOptions = [{value: "shoulderbag", text: "shoulder bag"}, {value: "handbag", text: "handbag"}, {value: "clutch", text: "clutch"}, {value: "tote", text: "tote"}]
+        each val in filterSubOptions
+          .col-xs-12.col-sm-12.col-md-4.col-lg-4
+            label.filter-button.subcat
+              .child
+                input(ng-model="filtertype.#{val.value}" type="checkbox" value="#{val.value}")
                 | #{val.text}
   .col-xs-3
     form

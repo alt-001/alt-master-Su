@@ -68,5 +68,6 @@ alt
   .when('/brand/products/featured', { templateUrl: '/pages/brand/brand-products-featured' })
   .when('/brand/trace', { templateUrl: '/pages/brand/brand-trace' })
   .when('/brand/inspirations', { templateUrl: '/pages/brand/brand-Inspirations' })
-  .when('/brand/:chapter', { templateUrl: '/pages/brand/brand-chapter' });
+  .when('/brand/:chapter', { templateUrl: '/pages/brand/brand-chapter' })
+  .when('/cn/brand/:chapter', { templateUrl: '/pages/brand/brand-chapter' });
 });

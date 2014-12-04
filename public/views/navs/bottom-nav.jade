@@ -12,7 +12,7 @@
       span.signin(ng-show="!identity.isAuthenticated()")
         a(href="/signup") Sign In
       span.login(ng-show="identity.isAuthenticated()")
-        a(href="#") {{identity.currentUser.firstName + " " + identity.currentUser.lastName}}
+        a(href="/account/love-products") {{identity.currentUser.firstName + " " + identity.currentUser.lastName}}
       span.mycart(ng-show="identity.isAuthenticated()")
         a(href="/account/cart") my cart
           i 2
@@ -24,5 +24,5 @@
       span.info
         a(href='/info') info
       span.language
-        a(href='#') 中文
+        a(href='/cn/brand/moment') 中文
 include partials/follow

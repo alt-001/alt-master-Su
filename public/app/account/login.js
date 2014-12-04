@@ -6,13 +6,11 @@ alt.controller('loginCtrl', function($scope, $http, $location, $route, $window, 
     altAuth.authenticateUser(username, password).then(function(success) {
       if(success) {
         toaster.pop('success', 'Successfully signed in!');
-        $location.path( "/account/love-products");
       } else {
         toaster.pop('error', 'Username/Password combination incorrect.');
       }
     });
   }
-
   $scope.signout = function() {
     altAuth.logoutUser().then(function() {
       $scope.username = "";
@@ -21,10 +19,8 @@ alt.controller('loginCtrl', function($scope, $http, $location, $route, $window, 
       $location.path( "/" );
     })
   }
-
   $scope.isSignup = function() {
     var currentRoute = $location.path().split('/');
     return currentRoute[1] === 'signup' ? 'true' : 'false';
   }
-  
 });

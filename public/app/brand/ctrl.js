@@ -22,7 +22,33 @@ alt
     { name: 'talk', url: '/brand/talk' },
     { name: 'inspirations', url: '/brand/inspirations' },
     { name: 'trace', url: '/brand/trace' }
-  ]
+  ];
+  $scope.cnchapters = [
+    { name: '单品', 
+      url: '/cn/brand/products/all',
+      class: 'product-active',
+      sub: [
+        {
+          name: '所有',
+          url: '/cn/brand/products/all'
+        },
+        {
+          name: '推荐',
+          url: '/cn/brand/products/featured'
+        }
+      ]
+    },
+    { name: '时刻', url: '/cn/brand/moment' },
+    { name: '故事', url: '/cn/brand/story' },
+    { name: '对话', url: '/cn/brand/talk' },
+    { name: '灵感', url: '/cn/brand/inspirations' },
+    { name: '回溯', url: '/cn/brand/trace' }
+  ];
+  $scope.lang = function () {
+    var currentRoute = $location.path().split('/');
+    console.log(currentRoute[1]);
+    return currentRoute[1] !== 'cn' ? 'true' : 'false';
+  };
   $scope.navClass = function (chapter) {
       var currentRoute = $location.path().split('/');
       return chapter === currentRoute[2] ? 'active' : '';

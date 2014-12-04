@@ -7,7 +7,7 @@ include partials/account-top
     .updates
       .lists
         .col-xs-3.media-info
-          .thumbnail(ng-repeat="person in rankedList| limitTo:quantity1") 
+          .thumbnail(ng-repeat="person in rankedList2 | orderBy:'rank' | limitTo:quantity1") 
             img.media-object(ng-src='{{person.item.img}}')
             .caption
               h5.name
@@ -26,7 +26,7 @@ include partials/account-top
           p.duration
             | 1 day ago
         .col-xs-3.media-info
-          .thumbnail(ng-repeat="person in rankedList2 | orderBy:'rank' | limitTo:quantity1") 
+          .thumbnail(ng-repeat="person in rankedList | limitTo:quantity1") 
             img.media-object(ng-src='{{person.item.img}}')
             .caption
               h5.name

@@ -20,7 +20,7 @@
         div.chat-text
           | lovely to meet,
           b
-            | z wang
+            | {{identity.currentUser.firstName + " " + identity.currentUser.lastName}}
     .clearfix   
     .lists(ng-controller="accountCtrl" ng-show="isLove()")
       ul
@@ -83,7 +83,7 @@
       .welcome
         | lovely to meet,
         b
-          | z wang
+          | {{identity.currentUser.firstName + " " + identity.currentUser.lastName}}
     .lists(ng-controller="accountCtrl" ng-show="isLove()")
       ul
         li
