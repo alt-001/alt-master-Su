@@ -7,16 +7,13 @@
         a(href='/product')
           img.product-cover.img-responsive(ng-src="{{product.image}}")
         .tag
-          .col-xs-2
-            .tag-trigger
-              img(src='/assets/images/tag.png')
-          .col-xs-10
+          .col-xs-12
             .tag-info
               .col-xs-12
                 a(href='/product')
                  | {{product.name}}
               .col-xs-12
-                .col-xs-6  
+                .col-xs-6
                   | {{product.price | currency: "£"}}
               .col-xs-12
                 .col-xs-6

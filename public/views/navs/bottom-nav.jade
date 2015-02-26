@@ -24,5 +24,13 @@
       span.info
         a(href='/info') info
       span.language
-        a(href='/cn/brand/moment') 中文
+        a.message(href='' data-toggle="modal" data-target="#myCn") 中文
+  #myCn.modal.fade(tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true")
+      .modal-dialog
+        .modal-content
+          .modal-header
+            button.close(type="button" data-dismiss="modal")
+              span(aria-hidden="true") &times;
+              span.sr-only Close
+            h4#myModalLabel.modal-title 中文版正在努力建设中
 include partials/follow

@@ -15,21 +15,21 @@ alt
     }
   };
 })
-.directive('hoverShow', function() {
-  return function(scope, element, attrs) {
-    if (scope.$last){
-      $('.tag-trigger').hoverIntent(function() {
-          $(this).parents('.tag').find('.tag-info').css({opacity: 0, visibility: 'visible'}).animate({opacity: 1}, 200, 'easeOutBounce');
-        }, function() {
-      });
+// .directive('hoverShow', function() {
+//   return function(scope, element, attrs) {
+//     if (scope.$last){
+//       $('.tag-trigger').hoverIntent(function() {
+//           $(this).parents('.tag').find('.tag-info').css({opacity: 0, visibility: 'visible'}).animate({opacity: 1}, 200, 'easeOutBounce');
+//         }, function() {
+//       });
       
-      $('.tag').hoverIntent(function() {
-        }, function() {
-          $(this).find('.tag-info').css({opacity: 1, visibility: 'visible'}).animate({opacity: 0}, 200, 'easeOutBounce');
-      });
-    }
-  };
-})
+//       $('.tag').hoverIntent(function() {
+//         }, function() {
+//           $(this).find('.tag-info').css({opacity: 1, visibility: 'visible'}).animate({opacity: 0}, 200, 'easeOutBounce');
+//       });
+//     }
+//   };
+// })
 .directive('zoom', function() {
   return function(scope, element, attrs) {
     if (scope.$last){

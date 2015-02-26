@@ -1,51 +1,42 @@
 #products
   li
+    background black
+    &:hover .product-cover
+      transition all 0.5s ease
+      opacity 0.7
+    &:hover .tag
+      transition all 0.3s ease
+      opacity 1
     .product-cover
       width 100%
-      background white
-      opacity 0.9
-      &:hover
-        transition all 0.5s ease
-        opacity 1
-        background black
+      opacity 1
     .tag
+      opacity 0
       position absolute
       right 0
       bottom 0
       height auto
       width 100%
-      padding-left 10px
-      padding-right 10px
-      margin-bottom 10px
-      .tag-trigger
-        text-align center
-        cursor pointer
-        bottom 0px
-        left 5px
-        position absolute
-        z-index 9
-        padding-right 100px
-        padding-top 40px
+      padding-left 15px
+      padding-right 15px
+      margin-bottom 15px
+      font 700 1em/1.2 'PT Sans'
       .tag-info
-        visibility hidden
-        position absolute
-        right 0
-        bottom 0
         background-color rgb(255, 255, 255)
         border 1px solid #ebebeb
         border-radius 3px
         width 100%
         float right
-        font 700 1em/1.2 'PT Sans'
         color #000
         padding 15px
+        font 700 1em/1.2 'PT Sans'
         text-decoration underline
         line-height 1.6
         z-index 10
         a
           color black
-          font-weight 100
           text-decoration underline
+          font 100 1em/1.2 'PT Sans'
         .remove
           background-color #cdcdcd
           width 20px
@@ -60,7 +51,7 @@
           display block
           font-size 0.75em
           font-weight 700
-          letter-spacing .5px          
+          letter-spacing .5px
           line-height 1.38
           margin 10px 0 0 0
           text-align center
@@ -78,7 +69,6 @@
           &:hover
             transition all 0.6s ease
             opacity 1
-
         .shadow
           width 60%
           margin-top -20px

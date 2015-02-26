@@ -1,6 +1,6 @@
 #brand-sidebar(ng-controller="brandChapterCtrl")
   div(ng-show="lang()")
-    .title 
+    .title
       | byAMT
     .misc
       .col-xs-2.share
@@ -20,7 +20,7 @@
               li(ng-repeat="sub in chapter.sub" ng-class="navClass('{{sub.name}}')")
                 a(href='{{sub.url}}' style="text-transform: capitalize") {{sub.name}}
   div(ng-hide="lang()")
-    .title 
+    .title
       | byAMT
     .misc
       .col-xs-2.share
