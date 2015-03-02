@@ -17,35 +17,9 @@ alt
         }
       ]
     },
-    { name: 'moment', url: '/brand/moment' },
-    { name: 'story', url: '/brand/story' },
-    { name: 'talk', url: '/brand/talk' },
+    { name: 'brand', url: '/brand/story' },
     { name: 'inspirations', url: '/brand/inspirations' },
     { name: 'trace', url: '/brand/trace' }
-  ];
-  $scope.cnchapters = [
-    { name: '单品',
-      id:'products',
-      url: '/cn/brand/products/all',
-      class: 'product-active',
-      sub: [
-        {
-          id:'all',
-          name: '所有',
-          url: '/cn/brand/products/all'
-        },
-        {
-          id:'featured',
-          name: '推荐',
-          url: '/cn/brand/products/featured'
-        }
-      ]
-    },
-    { name: '时刻', id:'moment', url: '/cn/brand/moment' },
-    { name: '故事', id:'story', url: '/cn/brand/story' },
-    { name: '对话', id:'talk', url: '/cn/brand/talk' },
-    { name: '灵感', id:'inspirations', url: '/cn/brand/inspirations' },
-    { name: '回溯', id:'trace', url: '/cn/brand/trace' }
   ];
   $scope.lang = function () {
     var currentRoute = $location.path().split('/');

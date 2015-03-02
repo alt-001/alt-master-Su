@@ -2,32 +2,32 @@
   include filter
   ul(masonry)
     li.masonry-brick.col-xs-3(ng-repeat="product in likeColorProducts | orderBy: sort" hover-show)
-      a(href='/product')
+      a(href='')
         img.product-cover.img-responsive(ng-src="{{product.image}}")
       .tag
         .tag-info
           .col-xs-9.col-sm-9.col-md-9.col-lg-9
-            a(href='/product')
+            a(href='')
              | {{product.name}}
           .col-xs-3.col-sm-3.col-md-3.col-lg-3.text-right
              | {{product.price | currency: "£"}}
           .col-xs-12.col-sm-12.col-md-12.col-lg-12
-            p from 
-              a(href='/brand/chapter/story')
+            p from
+              a(href='/brand/products/all')
                | {{product.brand}}
           .col-xs-6.col-sm-6.col-md-6.col-lg-6
-            button.small-button Add to Cart
+            button.small-button Reserve
           .col-xs-6.col-sm-6.col-md-6.col-lg-6.text-right
             img.love(src='/assets/images/lovely_icon.png' ng-click="like(product.id, product.color)")
             img.share(src='/assets/images/share_icon.png' data-toggle="modal" data-target="#shareModal")
           .clearfix
     li.masonry-brick.col-xs-3(ng-repeat="product in products | orderBy: 'id' | filtertype: filtertype | filter:productsFilterService.activeFilters " hover-show)
-      a(href='/product')
+      a(href='')
         img.product-cover.img-responsive(ng-src="{{product.image}}")
       .tag
         .tag-info
           .col-xs-9.col-sm-9.col-md-9.col-lg-9
-            a(href='/product')
+            a(href='')
              | {{product.name}}
           .col-xs-3.col-sm-3.col-md-3.col-lg-3.text-right
              | {{product.price | currency: "£"}}
@@ -36,7 +36,7 @@
               a(href='/brand/products/all')
                | {{product.brand}}
           .col-xs-6.col-sm-6.col-md-6.col-lg-6
-            button.small-button Add to Cart
+            button.small-button Reserve
           .col-xs-6.col-sm-6.col-md-6.col-lg-6.text-right
             img.love(src='/assets/images/lovely_icon.png' ng-click="like(product.id, product.color)" ng-show="identity.isAuthenticated()")
             a(href="/signup" ng-show="!identity.isAuthenticated()")

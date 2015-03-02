@@ -4,20 +4,20 @@
   #products(ng-controller="brandProductCtrl")
     ul(masonry)
       li.masonry-brick.col-xs-4.col-md-4(ng-repeat="product in products | orderBy:'-id'" hover-show)
-        a(href='/product')
+        a(href='')
           img.product-cover.img-responsive(ng-src="{{product.image}}")
         .tag
           .col-xs-12
             .tag-info
               .col-xs-12
-                a(href='/product')
+                a(href='')
                  | {{product.name}}
               .col-xs-12
                 .col-xs-6
                   | {{product.price | currency: "£"}}
               .col-xs-12
                 .col-xs-6
-                  button.small-button Add to Cart
+                  button.small-button Reserve
                 .col-xs-6
                   img.pull-right.love(src='/assets/images/lovely_icon.png')
                   img.pull-right.share(src='/assets/images/share_icon.png' data-toggle="modal" data-target="#shareModal")

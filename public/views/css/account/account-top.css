@@ -85,11 +85,11 @@
 .top-wrapper #account-top .lists ul li {
   display: inline-block;
   margin-right: 20px;
-}
-.top-wrapper #account-top .lists ul li:first-child,
-.top-wrapper #account-top .lists ul li:nth-child(2) {
-  padding-right: 30px;
   background: url("/assets/images/navi_dot.png") right center no-repeat;
+  padding-right: 30px;
+}
+.top-wrapper #account-top .lists ul li:last-child {
+  background: none;
 }
 .top-wrapper #account-top .lists ul li a {
   text-transform: uppercase;
