@@ -151,6 +151,8 @@
 }
 #signin-sidebar .signup .vip {
   padding-top: 10px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #626262;
 }
 #signin-sidebar .signup .vip .submit {
   background-color: #3e3e3e;
@@ -165,10 +167,10 @@
   background-color: #fff;
   color: #000;
 }
-#signin-sidebar .signup .vip .register {
-  margin-top: 5px;
+#signin-sidebar .signup .register {
+  margin-top: 20px;
 }
-#signin-sidebar .signup .vip .register a {
+#signin-sidebar .signup .register a {
   color: #fff;
   text-decoration: underline;
 }

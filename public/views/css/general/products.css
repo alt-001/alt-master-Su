@@ -40,7 +40,6 @@
 }
 #products li .tag .tag-info a {
   color: #000;
-  text-decoration: underline;
   font: 100 1em/1.2 'PT Sans';
 }
 #products li .tag .tag-info .remove {
