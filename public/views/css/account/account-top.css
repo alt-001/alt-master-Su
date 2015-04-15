@@ -1,7 +1,7 @@
 .top-wrapper {
   position: relative;
   width: 100%;
-  height: auto;
+  height: 100px;
 }
 .top-wrapper #account-top {
   font-family: 'PT Sans';

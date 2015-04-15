@@ -46,7 +46,6 @@ alt
       // responsible for registering DOM listeners as well as updating the DOM
       link: function(scope, element, attrs) {
         $(element).fancybox(
-          
         );
         if (scope.$last){
            $(".fancybox").fancybox({

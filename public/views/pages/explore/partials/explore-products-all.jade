@@ -1,0 +1,92 @@
+#luckyProducts(ng-controller="productsCtrl")
+  ul(masonry)
+    li.masonry-brick.col-xs-3(ng-repeat="product in products | orderBy: '-id' | filter:productsFilterService.activeFilters | limitTo:quantity " hover-show)
+      a(href='')
+        img.product-cover.img-responsive(ng-src="{{product.image}}")
+      .tag
+        .tag-info
+          .col-xs-9.col-sm-9.col-md-9.col-lg-9
+            a(href='')
+             u {{product.name}}
+          .col-xs-3.col-sm-3.col-md-3.col-lg-3.text-right
+             | {{product.price | currency: "£"}}
+          .col-xs-12.col-sm-12.col-md-12.col-lg-12
+            p from
+              a(href='/brand/products/all')
+               u {{product.brand}}
+          .col-xs-6.col-sm-6.col-md-6.col-lg-6
+            a(href='' data-toggle="modal" data-target="#reserveModal")
+              button.small-button Reserve
+          .col-xs-6.col-sm-6.col-md-6.col-lg-6.text-right
+            img.love(src='/assets/images/lovely_icon.png' ng-click="like(product.id, product.color)" ng-show="identity.isAuthenticated()")
+            a(href="/signup" ng-show="!identity.isAuthenticated()")
+              img.love(src='/assets/images/lovely_icon.png')
+            img.share(src='/assets/images/share_icon.png' data-toggle="modal" data-target="#shareModal")
+          .clearfix
+      #reserveModal.modal.fade(tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true")
+        .modal-dialog
+          .modal-content
+            .modal-header
+              button.close(type="button" data-dismiss="modal")
+                span(aria-hidden="true") &times;
+                span.sr-only Close
+              h4#myModalLabel.modal-title Reserve a product
+            .modal-body(style="padding-top:0;padding-bottom:0;")
+              h5#myModalLabel {{product.name}}
+              input(type="text" placeholder="Title").col-xs-12
+              input(type="text" placeholder="First Name").col-xs-12
+              input(type="text" placeholder="Last Name").col-xs-12
+              input(type="text" placeholder="Email address").col-xs-12
+              p We will contact you within 48 hours.
+            .modal-footer
+              button.btn.btn-default(type="button" data-dismiss="modal") close
+              button.btn.btn-primary(type="button") Submit
+    include share-btn
+#filterProducts(ng-controller="productsCtrl")
+  //- instruction only shows when no filtering has been selected
+  .instruction
+    h4 If you have something in your mind
+    h4 Select any category left to start receiving lovely products
+  ul(masonry)
+    li.masonry-brick.col-xs-4(ng-repeat="product in products | orderBy: 'id' | filtertype: filtertype | filter:productsFilterService.activeFilters" hover-show)
+      a(href='')
+        img.product-cover.img-responsive(ng-src="{{product.image}}")
+      .tag
+        .tag-info
+          .col-xs-9.col-sm-9.col-md-9.col-lg-9
+            a(href='')
+             u {{product.name}}
+          .col-xs-3.col-sm-3.col-md-3.col-lg-3.text-right
+             | {{product.price | currency: "£"}}
+          .col-xs-12.col-sm-12.col-md-12.col-lg-12
+            p from
+              a(href='/brand/products/all')
+               u {{product.brand}}
+          .col-xs-6.col-sm-6.col-md-6.col-lg-6
+            a(href='' data-toggle="modal" data-target="#reserveModal")
+              button.small-button Reserve
+          .col-xs-6.col-sm-6.col-md-6.col-lg-6.text-right
+            img.love(src='/assets/images/lovely_icon.png' ng-click="like(product.id, product.color)" ng-show="identity.isAuthenticated()")
+            a(href="/signup" ng-show="!identity.isAuthenticated()")
+              img.love(src='/assets/images/lovely_icon.png')
+            img.share(src='/assets/images/share_icon.png' data-toggle="modal" data-target="#shareModal")
+          .clearfix
+      #reserveModal.modal.fade(tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true")
+        .modal-dialog
+          .modal-content
+            .modal-header
+              button.close(type="button" data-dismiss="modal")
+                span(aria-hidden="true") &times;
+                span.sr-only Close
+              h4#myModalLabel.modal-title Reserve a product
+            .modal-body(style="padding-top:0;padding-bottom:0;")
+              h5#myModalLabel {{product.name}}
+              input(type="text" placeholder="Title").col-xs-12
+              input(type="text" placeholder="First Name").col-xs-12
+              input(type="text" placeholder="Last Name").col-xs-12
+              input(type="text" placeholder="Email address").col-xs-12
+              p We will contact you within 48 hours.
+            .modal-footer
+              button.btn.btn-default(type="button" data-dismiss="modal") close
+              button.btn.btn-primary(type="button") Submit
+    include share-btn

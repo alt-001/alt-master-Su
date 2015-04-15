@@ -21,7 +21,6 @@ html(ng-app="alt")
     link(rel='stylesheet' href='/views/css/general/top-nav.css')
     link(rel='stylesheet' href='/views/css/general/bottom-nav.css')
     link(rel='stylesheet' href='/views/css/general/products.css')
-    link(rel='stylesheet' href='/views/css/general/filter.css')
     link(rel='stylesheet' href='/views/css/general/signup.css')
     link(rel='stylesheet' href='/views/css/general/follow.css')
     //- brand style
@@ -44,9 +43,9 @@ html(ng-app="alt")
     link(rel='stylesheet' href='/views/css/signup/signin-sidebar.css')
     //- search
     link(rel='stylesheet' href='/views/css/general/search.css')
-    //- showroom
-    link(rel='stylesheet' href='/views/css/general/showroom.css')
-
+    //- explore
+    link(rel='stylesheet' href='/views/css/explore/explore-sidebar.css')
+    link(rel='stylesheet' href='/views/css/explore/explore-products.css')
 
     link(rel="stylesheet" href="/vendor/angularjs-toaster/toaster.css")
 
@@ -58,5 +57,5 @@ html(ng-app="alt")
       section#main
         div(ng-view)
       footer
-        include navs/bottom-nav  
+        include navs/bottom-nav
       include scripts

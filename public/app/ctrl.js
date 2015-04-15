@@ -24,13 +24,14 @@ alt
     $scope.minRating = 0;
     $scope.maxRating = 50;
 })
+
 .controller('sortCtrl', function($scope, productsSort) {
     $scope.sorts = productsSort.query();
 })
 .controller('productsCtrl', function($scope, $window, altIdentity, altAuth, Restangular, ngProgress, toaster, productsFilterService) {
 
   $scope.productsFilterService = productsFilterService;
-
+  $scope.quantity = 4;
   $scope.identity = altIdentity;
   if ($scope.identity.currentUser != undefined) {
     if ($scope.identity.currentUser.gender == 'x') {
